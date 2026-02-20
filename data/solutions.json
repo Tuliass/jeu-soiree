@@ -1,0 +1,80 @@
+[
+  {
+    "solutionId": 1,
+    "situationId": 1,
+    "solutionDescription": "Vous fouillez leurs sacs pendant leur sommeil.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "description": "{{membreGroupe2}} était parti aux toilettes. Il vous surprend la tête dans son sac et vous assène un violent coup. Vous partez en courant de la maison.",
+        "nbVie": -5
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "perte",
+        "description": "En quittant la maison en vitesse vous avez oublié {{objetNom}}.",
+        "objetId": 0
+      },
+      {
+        "groupNb": 2,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Après avoir vérifié que {{groupe1}} a bien quitté les lieux, {{membreGroupe2}} voit qu'ils ont oublié {{objetNom}} dans la chambre.",
+        "objetId": 0
+      }
+    ]
+  },
+  {
+    "solutionId": 2,
+    "situationId": 1,
+    "solutionDescription": "Vous réveillez {{groupe2}} en lui assurant directement que vous ne lui voulez aucun mal. En prouvant votre bonne foi vous pourrez fusionner vos groupes.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "description": "{{groupe2}} paniquent quand vous les réveillez et {{membreGroupe2}} vous frappe par réflexe.",
+        "nbVie": -1
+      },
+      {
+        "groupsNb":[1,2],
+        "type": "groupe",
+        "groupAction": "fusion",
+        "description": "Malgré ce premier moment de panique vos deux groupes comprennent rapidement qu'ils ne sont pas en danger. Après avoir passé le reste de la nuit à s'échanger des conseils et des vivres vous décidez de repartir ensemble au matin."
+      }
+    ]
+  },
+  {
+    "solutionId": 3,
+    "situationId": 1,
+    "solutionDescription": "Vous piquez discrètement {{groupe2}} avec la seringue. C'est une bonne occasion pour découvrir ce qu'il y a dedans.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 5
+    },
+    "consequences": [
+      {
+        "groupNb": 2,
+        "type": "vie",
+        "description": "Le matin, {{groupe2}} se réveillent soudainement avec des maux de ventre atroces. Après un échange de regards inquiets vous vous mettez tous à vous vomir dessus.",
+        "nbVie": -2
+      },
+      {
+        "groupNb": 2,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Au fil de la journée vous commencez à tous vous sentir revivre. Excepté {{membreGroupe2}} qui continue de se vider par tous les orifices.",
+        "statutId": 1
+      }
+    ]
+  }
+]

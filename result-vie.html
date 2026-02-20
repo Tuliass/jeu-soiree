@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conséquence – Points de vie</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="app-header">
+        <button id="back-home">⬅</button>
+        <h1 id="player-name"></h1>
+        <button id="open-groups">👥</button>
+    </header>
+  <div class="result-container">
+
+    <!-- 🧠 Description narrative -->
+    <p id="result-description" class="description"></p>
+
+    <main class="result-container">
+        <h2 id="pv-total" class="pv-total"></h2>
+        
+        <div id="players-container"></div>
+        
+        <button id="confirm-btn" disabled>Confirmer</button>
+    </main>
+
+
+
+    
+  </div>
+  <div id="groups-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Groupes</h2>
+        <button class="square-button" id="close-groups">✖</button>
+      </div>
+  
+      <div id="groups-container"></div>
+    </div>
+  </div>
+  <!-- JS -->
+  <script src="js/result-vie.js"></script>
+  
+</body>
+</html>

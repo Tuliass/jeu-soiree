@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Un joueur est mort</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header identique aux autres pages -->
+   
+  <header class="app-header">
+    <button id="back-home">⬅</button>
+    <h1>☠️ Mort</h1>
+    <button id="open-groups">👥</button>
+  </header>
+
+  <main class="result-container">
+
+    <p class="result-description">
+      Les joueurs suivants sont morts et quittent définitivement la partie :
+    </p>
+
+    <ul id="dead-players-list" class="dead-list"></ul>
+
+    <button id="continue-btn" class="primary-btn">
+      Continuer la partie
+    </button>
+  </main>
+
+  <!-- Modal groupes (réutilisation) -->
+  <div id="groups-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Groupes</h2>
+        <button class="square-button" id="close-groups">✖</button>
+      </div>
+  
+      <div id="groups-container"></div>
+    </div>
+  </div>
+
+  <script src="js/result-mort.js"></script>
+</body>
+</html>

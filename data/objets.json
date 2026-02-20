@@ -1,0 +1,44 @@
+[
+  {
+    "objetId": 1,
+    "objetNom": "Hache",
+    "objetDescription": "Cette hache robuste vous permettra de vous défendre et de vous sortir de situations épineuses.",
+    "objetResistance": 0.6,
+    "objetIcone": "hache.svg"
+  },
+  {
+    "objetId": 2,
+    "objetNom": "Fusil de chasse",
+    "objetDescription": "Ce vieux fusil de chasse vous permettra de vous défendre tout en restant loin du danger. Il n'a cependant pas été bien entretenu.",
+    "objetResistance": 0.3,
+    "objetIcone": "fusilChasse.svg"
+  },
+  {
+    "objetId": 3,
+    "objetNom": "Sniper",
+    "objetDescription": "Ce sniper dernier cri semble avoir été particulièrement bien entretenu. Bien utilisé, il vous rendra intouchable.",
+    "objetResistance": 0.8,
+    "objetIcone": "sniper.svg"
+  },
+  {
+    "objetId": 4,
+    "objetNom": "Crochet",
+    "objetDescription": "Ce crochet vous permettra d'ouvrir des coffres ou des serrures.",
+    "objetResistance": 0.5,
+    "objetIcone": "crochet.svg"
+  },
+  {
+    "objetId": 5,
+    "objetNom": "Seringue louche",
+    "objetDescription": "Cette seringue contient un liquide non identifiable. Ce n'est peut-être pas une si bonne idée de la garder avec vous...",
+    "objetResistance": 0,
+    "objetIcone": "seringue.svg"
+  },
+  {
+    "objetId": 6,
+    "objetNom": "Sifflet",
+    "objetDescription": "Ce sifflet pourra vous permettre d'appeler des renforts lorsque vous en aurez besoin.",
+    "objetResistance": 1,
+    "objetIcone": "sifflet.svg"
+  }
+]

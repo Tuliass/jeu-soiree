@@ -1,0 +1,335 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  #themes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .theme-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  .theme-card img {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .theme-card h2 {
+    margin: 10px 0;
+  }
+  
+  input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #b30000;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  hr {
+    margin: 30px 0;
+    border: 1px solid #333;
+  }
+  #theme-description {
+    white-space: normal;
+    word-break: break-word;
+    overflow: visible;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .player-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .player-row input {
+    flex: 1;
+  }
+  
+  .player-row button {
+    width: 50px;
+    background-color: #333;
+  }
+  
+  button:disabled {
+    opacity: 0.4;
+  }
+      
+  .app-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .app-header h1 {
+    flex: 1;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  #back-home {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+  }
+  .solution-card {
+    border: 2px solid #444;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .solution-card.selected {
+    border-color: #00c853;
+    background-color: #1b3a2b;
+  }
+  
+  .solution-card.disabled {
+    opacity: 0.4;
+  }
+  
+  .solution-card.disabled * {
+    pointer-events: none;
+  }
+  
+  .condition-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  #confirm-solution {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  #open-groups {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    font-size: 18px;
+  }
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    width: 90%;
+    max-height: 85%;
+    background: #e6e2df;
+    border-radius: 16px;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .modal-header h2 {
+    margin: 0 auto;
+    color:black;
+  }
+  
+  .modal-header button {
+    font-size: 18px;
+  }
+  
+  /* Groupes */
+  .group-block {
+    margin-bottom: 16px;
+  }
+  
+  .group-title {
+    font-weight: bold;
+    color:black;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #333;
+  }
+  
+  /* Joueurs */
+  .player-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .player-name {
+    background: #777;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    min-width: 80px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  /* Vie */
+  .hearts {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .heart {
+    font-size: 16px;
+    color: red;
+  }
+  
+  .heart.empty {
+    opacity: 0.3;
+  }
+  
+  /* Icônes */
+  .player-icons {
+    display: flex;
+    gap: 6px;
+    margin-left: auto;
+  }
+  
+  .player-icons img {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .square-button{
+    width: 35px;
+    height: 35px;
+  }
+
+  .player-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  
+    color: white;
+  }
+  
+  /* Bloc gauche */
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .player-name {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* ❤️ PV actuels */
+  .hearts {
+    font-size: 16px;
+    line-height: 1;
+  }
+  
+  /* Bloc droit */
+  .pv-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .pv-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+  
+    background: #333;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pv-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .pv-value {
+    width: 24px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .choice-card {
+  border: 2px solid #444;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #1e1e1e;
+}
+
+.choice-card:hover {
+  border-color: #888;
+}
+
+.choice-card.selected {
+  border-color: #4cafef;
+  background: #2a2a2a;
+}
+
+.choice-card.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.choice-card select {
+  margin-top: 8px;
+  width: 100%;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Changement de statut</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER identique aux autres pages -->
+  <header class="app-header">
+      <button id="back-home">⬅</button>
+      <h1 id="player-name"></h1>
+      <button id="open-groups">👥</button>
+  </header>
+
+  <main class="result-container">
+    <!-- 🧠 Description narrative -->
+    <p id="result-description" class="description"></p>
+
+    <div id="result-content" class="result-box">
+      <!-- Injecté en JS -->
+    </div>
+
+    <button id="continue-btn" class="primary-btn">
+      Continuer
+    </button>
+  </main>
+
+  <!-- Modal groupes -->
+  <div id="groups-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Groupes</h2>
+        <button class="square-button" id="close-groups">✖</button>
+      </div>
+  
+      <div id="groups-container"></div>
+    </div>
+  </div>
+
+  <script src="js/result-statut.js"></script>
+</body>
+</html>

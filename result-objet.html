@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Objet</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="app-header">
+        <button id="back-home">⬅</button>
+        <h1 id="player-name"></h1>
+        <button id="open-groups">👥</button>
+    </header>
+
+  <main class="result-container">
+    <p id="result-description" class="result-description"></p>
+
+    <div id="objet-card" class="objet-card hidden">
+      <img id="objet-icon"/>
+      <h3 id="objet-name"></h3>
+    </div>
+
+    <div id="choices" class="choices hidden">
+
+  <div class="choice-card" id="card-keep" data-action="keep">
+    <h3>Récupérer</h3>
+    <p>Prendre l'objet pour soi</p>
+  </div>
+
+  <div class="choice-card" id="card-give" data-action="give">
+    <h3>Donner</h3>
+    <select id="give-select"></select>
+  </div>
+
+  <div class="choice-card" id="card-discard" data-action="discard">
+    <h3>Jeter</h3>
+    <p>Personne ne récupère l'objet</p>
+  </div>
+
+</div>
+
+<button id="confirm-btn" class="primary-btn" disabled>
+  Continuer
+</button>
+
+  <div id="groups-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Groupes</h2>
+        <button class="square-button" id="close-groups">✖</button>
+      </div>
+  
+      <div id="groups-container"></div>
+    </div>
+  </div>
+
+  <script src="js/result-objet.js"></script>
+</body>
+</html>

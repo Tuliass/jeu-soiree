@@ -1,0 +1,416 @@
+/***********************
+ * 🔁 ÉTAT DU JEU
+ ***********************/
+const savedState = localStorage.getItem("etatJeu");
+if (!savedState) {
+  window.location.href = "index.html";
+}
+Object.assign(state, JSON.parse(savedState));
+
+if (state && state.groupes) {
+
+  // Récupère tous les joueurs vivants
+  const joueursVivants = state.groupes
+    .flat()
+    .filter(joueur => joueur.pv > 0);
+
+  if (joueursVivants.length === 1) {
+
+    // Sauvegarde le gagnant
+    localStorage.setItem("gagnant", JSON.stringify(joueursVivants[0]));
+
+    // Redirection vers page gagnant
+    window.location.href = "gagnant.html";
+    
+  }
+}
+
+
+/***********************
+ * 🎯 DOM
+ ***********************/
+const playerNameEl = document.getElementById("player-name");
+const situationDescEl = document.getElementById("situation-description");
+const solutionsContainer = document.getElementById("solutions-container");
+const confirmButton = document.getElementById("confirm-solution");
+confirmButton.disabled = true;
+
+document.getElementById("back-home").addEventListener("click", () => {
+  if (confirm("Revenir à l'accueil ? La partie sera réinitialisée.")) {
+    localStorage.clear();
+    window.location.href = "index.html";
+  }
+});
+
+const modal = document.getElementById("groups-modal");
+const openBtn = document.getElementById("open-groups");
+const closeBtn = document.getElementById("close-groups");
+const container = document.getElementById("groups-container");
+
+openBtn.addEventListener("click", () => {
+  renderGroupsModal();
+  modal.classList.remove("hidden");
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+
+/***********************
+ * 📦 DATA CACHE
+ ***********************/
+const dataCache = {};
+
+async function chargerData() {
+  if (dataCache.loaded) return dataCache;
+
+  const [situations, solutions] = await Promise.all([
+    fetch("./data/situations.json").then(r => r.json()),
+    fetch("./data/solutions.json").then(r => r.json())
+  ]);
+
+  dataCache.situations = situations;
+  dataCache.solutions = solutions;
+  dataCache.loaded = true;
+
+  return dataCache;
+}
+
+/***********************
+ * 🚀 LOGIQUE PRINCIPALE
+ ***********************/
+chargerData().then(({ situations, solutions }) => {
+  let joueurActif;
+  let situation;
+  let groupesSelectionnes;
+  let contexte;
+
+  // 🔁 CONTEXTE EXISTANT
+  if (state.situationEnCours) {
+    joueurActif = state.joueurs.find(j => j.id === state.joueurActifId);
+    situation = state.situationActuelle;
+    groupesSelectionnes = state.groupesSituation;
+    contexte = state.contexteSituation;
+  } 
+  // 🆕 NOUVELLE SITUATION
+  else {
+    joueurActif =
+      state.joueurs[Math.floor(Math.random() * state.joueurs.length)];
+
+    const groupePrincipal = state.groupes.find(g =>
+      g.some(j => j.id === joueurActif.id)
+    );
+
+    const situationsTheme = situations.filter(
+      s =>
+        s.themeId === state.themeActuel.themeId &&
+        s.nbGroupes <= state.groupes.length
+    );
+
+    situation =
+      situationsTheme[Math.floor(Math.random() * situationsTheme.length)];
+
+    groupesSelectionnes = [groupePrincipal];
+
+    if (situation.nbGroupes > 1) {
+      const autresGroupes = state.groupes.filter(g => g !== groupePrincipal);
+      shuffleArray(autresGroupes);
+      groupesSelectionnes.push(
+        ...autresGroupes.slice(0, situation.nbGroupes - 1)
+      );
+    }
+
+    contexte = buildContext(groupesSelectionnes, joueurActif);
+
+    // 💾 Sauvegarde du contexte
+    state.situationEnCours = true;
+    state.joueurActifId = joueurActif.id;
+    state.situationActuelle = situation;
+    state.groupesSituation = groupesSelectionnes;
+    state.contexteSituation = contexte;
+
+    localStorage.setItem("etatJeu", JSON.stringify(state));
+    // ===============================
+    // 🔥 RÈGLE : un seul groupe restant
+    // ===============================
+    if (state.groupes.length === 1) {
+
+      const consequenceScission = {
+        groupsNb: [1],
+        type: "groupe",
+        groupAction: "scission",
+        description:
+          "Au fil du temps un climat de méfiance se créé entre {{membreGroupe1}} et {{groupe1}}. D'un commun accord, vous préférez vous séparer plutôt que de risquer de vous entretuer."
+      };
+
+      state.solutionSelectionnee = {
+        consequences: [consequenceScission]
+      };
+
+      state.consequenceIndex = 0;
+      state.situationEnCours = false;
+
+      localStorage.setItem("etatJeu", JSON.stringify(state));
+
+      window.location.href = "result.html";
+      return;
+    }
+
+  }
+
+  playerNameEl.textContent = joueurActif.nom;
+  situationDescEl.textContent = applyTemplate(
+    situation.situationDescription,
+    contexte
+  );
+
+  const solutionsSituation = solutions.filter(
+    sol => sol.situationId === situation.situationId
+  );
+  
+  let solutionSelectionnee = null;
+  
+  solutionsSituation.forEach(solution => {
+    const card = document.createElement("div");
+    card.classList.add("solution-card");
+  
+    const p = document.createElement("p");
+    p.textContent = applyTemplate(solution.solutionDescription, contexte);
+    card.appendChild(p);
+  
+    // 🧩 Gestion condition
+    let conditionValide = true;
+  
+    if (
+      solution.solutionCondition &&
+      (solution.solutionCondition.objetId || solution.solutionCondition.statutId)
+    ) {
+      const icon = document.createElement("img");
+      icon.classList.add("condition-icon");
+  
+      // 🎒 Condition objet
+      if (solution.solutionCondition.objetId) {
+        const objet = state.objets.find(
+          o => o.objetId === solution.solutionCondition.objetId
+        );
+        if (objet) {
+          icon.src = `./assets/${objet.objetIcone}`;
+        }
+      }
+  
+      // 🧠 Condition statut
+      if (solution.solutionCondition.statutId) {
+        const statut = state.statuts.find(
+          s => s.statutId === solution.solutionCondition.statutId
+        );
+        if (statut) {
+          icon.src = `./assets/${statut.statutIcone}`;
+        }
+      }
+  
+      card.appendChild(icon);
+  
+      conditionValide = groupeRemplitCondition(
+        solution.solutionCondition,
+        groupesSelectionnes[0] // groupe du joueur actif
+      );
+    }
+  
+    // 🚫 Désactivation si condition non remplie
+    if (!conditionValide) {
+      card.classList.add("disabled");
+    } else {
+      card.addEventListener("click", () => {
+        document
+          .querySelectorAll(".solution-card")
+          .forEach(c => c.classList.remove("selected"));
+  
+        card.classList.add("selected");
+        solutionSelectionnee = solution;
+        confirmButton.disabled = false;
+      });
+    }
+  
+    solutionsContainer.appendChild(card);
+  });
+  
+
+  confirmButton.addEventListener("click", () => {
+
+    state.contexteSituation = contexte;
+    state.consequenceIndex = 0;
+
+    // Clone propre pour éviter mutation JSON d'origine
+    const solutionFinale = JSON.parse(JSON.stringify(solutionSelectionnee));
+
+    // ===============================
+    // 🎒 Gestion casse d'objet
+    // ===============================
+    if (
+      solutionFinale.solutionCondition &&
+      solutionFinale.solutionCondition.objetId
+    ) {
+      const objetId = solutionFinale.solutionCondition.objetId;
+
+      const objet = state.objets.find(o => o.objetId === objetId);
+            
+
+      if (objet) {
+        const probCasse = objet.objetResistance || 0;
+        if (Math.random() > probCasse) {
+
+          const consequenceCasse = {
+            groupNb: 1,
+            type: "objet",
+            objetAction: "perte",
+            description:
+              "{{objetNom}} se casse juste après que vous l'ayez utilisé.",
+            objetId: 0
+          };
+
+          // Injection en début de chaîne
+          solutionFinale.consequences = [
+            consequenceCasse,
+            ...(solutionFinale.consequences || [])
+          ];
+        }
+      }
+    }
+
+  state.solutionSelectionnee = solutionFinale;
+
+  localStorage.setItem("etatJeu", JSON.stringify(state));
+
+  window.location.href = "result.html";
+});
+
+});
+
+/***********************
+ * 🧠 CONTEXTE
+ ***********************/
+function buildContext(groupes, joueurActif) {
+  const context = {};
+
+  groupes.forEach((groupe, index) => {
+    const i = index + 1;
+
+    const noms = groupe
+      .filter(j => j.id !== joueurActif.id)
+      .map(j => j.nom);
+
+    context[`groupe${i}`] = formatNoms(noms);
+    context[`membreGroupe${i}`] =
+      groupe[Math.floor(Math.random() * groupe.length)].nom;
+  });
+
+  return context;
+}
+
+/***********************
+ * ✨ FORMATAGE NOMS
+ ***********************/
+function formatNoms(noms) {
+  if (noms.length === 0) return "";
+  if (noms.length === 1) return noms[0];
+  if (noms.length === 2) return `${noms[0]} et ${noms[1]}`;
+
+  return (
+    noms.slice(0, -1).join(", ") +
+    " et " +
+    noms[noms.length - 1]
+  );
+}
+
+/***********************
+ * 🔧 UTILS
+ ***********************/
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+function applyTemplate(text, context) {
+  return text.replace(/{{(.*?)}}/g, (_, key) => context[key] ?? "");
+}
+
+function groupeRemplitCondition(solutionCondition, groupe) {
+  if (!solutionCondition) return true;
+
+  if (solutionCondition.objetId) {
+    return groupe.some(joueur => joueur.objet === solutionCondition.objetId);
+  }
+
+  if (solutionCondition.statutId) {
+    return groupe.some(joueur => joueur.statut === solutionCondition.statutId);
+  }
+
+  return true;
+}
+
+
+function renderGroupsModal() {
+  container.innerHTML = "";
+
+  state.groupes.forEach((groupe, index) => {
+    const groupBlock = document.createElement("div");
+    groupBlock.classList.add("group-block");
+
+    const title = document.createElement("div");
+    title.classList.add("group-title");
+    title.textContent = `Groupe ${index + 1}`;
+    groupBlock.appendChild(title);
+
+    groupe.forEach(joueur => {
+      const row = document.createElement("div");
+      row.classList.add("player-row");
+
+      // Nom
+      const name = document.createElement("div");
+      name.classList.add("player-name");
+      name.textContent = joueur.nom;
+      row.appendChild(name);
+
+      // Vie
+      const hearts = document.createElement("div");
+      hearts.classList.add("hearts");
+
+      for (let i = 0; i < 10; i++) {
+        const heart = document.createElement("span");
+        heart.classList.add("heart");
+        heart.textContent = "♥";
+        if (i >= joueur.pv) heart.classList.add("empty");
+        hearts.appendChild(heart);
+      }
+
+      row.appendChild(hearts);
+
+      // Icônes
+      const icons = document.createElement("div");
+      icons.classList.add("player-icons");
+
+      if (joueur.statut) {
+        const statut = state.statuts.find(s => s.statutId === joueur.statut);
+        if (statut) {
+          const img = document.createElement("img");
+          img.src = `./assets/${statut.statutIcone}`;
+          icons.appendChild(img);
+        }
+      }
+
+      if (joueur.objet) {
+        const objet = state.objets.find(o => o.objetId === joueur.objet);
+        if (objet) {
+          const img = document.createElement("img");
+          img.src = `./assets/${objet.objetIcone}`;
+          icons.appendChild(img);
+        }
+      }
+
+      row.appendChild(icons);
+      groupBlock.appendChild(row);
+    });
+
+    container.appendChild(groupBlock);
+  });
+}

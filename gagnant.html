@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Jeu de soirée - Choix du thème</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏆 Victoire !</h1>
+  <div id="winner"></div>
+
+  <button id="homeBtn">Retour à l'accueil</button>
+
+  <script>
+    const gagnant = JSON.parse(localStorage.getItem("gagnant"));
+    const container = document.getElementById("winner");
+
+    if (gagnant) {
+      container.innerHTML = `
+        <h2>${gagnant.nom}</h2>
+        <p>PV restants : ${gagnant.pv}</p>
+      `;
+    }
+
+    document.getElementById("homeBtn").addEventListener("click", () => {
+
+      // Nettoyage complet de la partie (recommandé)
+      localStorage.removeItem("etatJeu");
+      localStorage.removeItem("gagnant");
+      localStorage.removeItem("solutionChoisie");
+
+      // Redirection vers accueil
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>

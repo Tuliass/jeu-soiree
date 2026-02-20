@@ -1,0 +1,14 @@
+[
+  {
+    "situationId": 1,
+    "themeId": 1,
+    "situationDescription": "En explorant une maison abandonnée la nuit avec {{groupe1}}, vous entendez un bruit à l'étage. Vous tombez sur {{groupe2}} endormis dans une chambre. Que faites-vous ?",
+    "nbGroupes": 2
+  },
+  {
+    "situationId": 2,
+    "themeId": 2,
+    "situationDescription": "",
+    "nbGroupes": 1
+  }
+]
