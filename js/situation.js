@@ -109,7 +109,7 @@ chargerData().then(({ situations, solutions }) => {
     );
 
     situation =
-      situationsTheme[Math.floor(Math.random() * situationsTheme.length)];
+      situationsTheme[Math.floor(Math.random() * situationsTheme.length)]||situations.filter(s => s.themeId === state.themeActuel.themeId)[0];
 
     groupesSelectionnes = [groupePrincipal];
 
