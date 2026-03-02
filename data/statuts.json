@@ -15,34 +15,27 @@
   },
   {
     "statutId": 3,
-    "statutNom": "Hémorragie",
-    "statutDescription": "Vous êtes blessé gravement. A chaque tour, vous perdrez automatiquement 1 point de vie.",
-    "statutDuree": 6,
-    "statutIcone": "hemorragie.svg"
-  },
-  {
-    "statutId": 4,
     "statutNom": "Épuisé",
     "statutDescription": "Vous êtes épuisé, vous ne pouvez plus utiliser ou récupérer d'objet.",
     "statutDuree": 7,
     "statutIcone": "epuise.svg"
   },
   {
-    "statutId": 5,
+    "statutId": 4,
     "statutNom": "Chanceux",
     "statutDescription": "La chance semble vous sourire, vous ne pouvez plus perdre de point de vie.",
     "statutDuree": 4,
     "statutIcone": "chanceux.svg"
   },
   {
-    "statutId": 6,
+    "statutId": 5,
     "statutNom": "Bourré",
     "statutDescription": "Vous êtes bourré, vous n'êtes plus maître de vos moyens.",
     "statutDuree": 8,
     "statutIcone": "bourre.svg"
   },
   {
-    "statutId": 7,
+    "statutId": 6,
     "statutNom": "Reposé",
     "statutDescription": "Vous avez bien dormi. A chaque situation vous impliquant, vous gagnez automatiquement 1 point de vie.",
     "statutDuree": 4,

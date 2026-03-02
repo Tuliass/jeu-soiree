@@ -234,6 +234,31 @@ chargerData().then(({ situations, solutions }) => {
   
     solutionsContainer.appendChild(card);
   });
+
+
+  // ===============================
+  // 🎒 Gestion du statut bourre
+  // ===============================
+  if(joueurActif.statut==5){
+    const solutionsCards=document.getElementsByClassName("solution-card");
+    console.log(solutionsCards);
+    let checkValide= false;
+    let solutionByDefault;
+    while(!checkValide){
+      solutionByDefault= solutionsCards[Math.floor(Math.random() * solutionsCards.length)];
+      if(!solutionByDefault.classList.contains("disabled")){
+        console.log(solutionByDefault);
+        solutionByDefault.click();
+        checkValide=true;
+      }
+      
+    }
+    for (let i = 0; i < solutionsCards.length; i++) {
+      solutionsCards[i].classList.add("disabled");
+    }
+    situationDescEl.innerText+="\n \n Vous êtes bourré. Vous n'êtes plus mettre de vos choix."
+
+  }
   
 
   confirmButton.addEventListener("click", () => {
@@ -276,6 +301,40 @@ chargerData().then(({ situations, solutions }) => {
           ];
         }
       }
+    }
+
+    // ===============================
+    // 🎒 Gestion statut PV (blessé ou chanceux)
+    // ===============================
+    if(joueurActif.statut==2){  //blessé
+      const consequenceBlesse = {
+        groupNb: 1,
+        type: "vie",
+        nbVie: -1,
+        description:
+          "{{membreGroupe1}} est blessé. Retirez lui 1 PV",
+      };
+
+      // Injection en début de chaîne
+      solutionFinale.consequences = [
+        consequenceBlesse,
+        ...(solutionFinale.consequences || [])
+      ];
+    }
+    if(joueurActif.statut==6){  //reposé
+      const consequenceRepose = {
+        groupNb: 1,
+        type: "vie",
+        nbVie: 1,
+        description:
+          "{{membreGroupe1}} est reposé. Ajoutez lui 1 PV",
+      };
+
+      // Injection en début de chaîne
+      solutionFinale.consequences = [
+        consequenceRepose,
+        ...(solutionFinale.consequences || [])
+      ];
     }
 
   state.solutionSelectionnee = solutionFinale;
@@ -338,7 +397,7 @@ function groupeRemplitCondition(solutionCondition, groupe) {
   if (!solutionCondition) return true;
 
   if (solutionCondition.objetId) {
-    return groupe.some(joueur => joueur.objet === solutionCondition.objetId);
+    return groupe.filter(j=>j.statut!=3).some(joueur => joueur.objet === solutionCondition.objetId); //Les joueurs épuisés (statutId=3) ne peuvent pas utiliser leur objet
   }
 
   if (solutionCondition.statutId) {
@@ -413,4 +472,11 @@ function renderGroupsModal() {
 
     container.appendChild(groupBlock);
   });
+}
+
+
+
+
+function applyBourre(){
+
 }

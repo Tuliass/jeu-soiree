@@ -113,6 +113,7 @@ function init() {
     const confirmBtn = document.getElementById("confirm-btn");
     confirmBtn.disabled = false;
     confirmBtn.onclick = () => {
+      syncGroupes();
       state.consequenceIndex++;
       localStorage.setItem("etatJeu", JSON.stringify(state));
       redirectNext(state);
@@ -137,6 +138,13 @@ function init() {
     confirmBtn.disabled = true;
 
     let selectedAction = null;
+
+    //Si le joueur est épuisé (statut==3) il ne peut pas récupérer l'objet
+    if(membre.statut==3){
+      cardKeep.classList.add("disabled");
+      const desc = document.getElementById("result-description");
+      desc.innerHTML="\n \nVous êtes épuisé. Vous ne pouvez pas récupérer l'objet trouvé";
+    }
 
     // 🔎 Joueurs pouvant recevoir l'objet (sans objet)
     const eligiblePlayers = groupe.filter(j => 
@@ -178,8 +186,7 @@ function init() {
     };
 
     confirmBtn.onclick = () => {
-
-      if (!selectedAction) return;
+      syncGroupes();
 
       if (selectedAction === "keep") {
         membre.objet = objet.objetId;
@@ -203,16 +210,7 @@ function init() {
     };
   }
 
-  syncGroupes();
-
-  // ===============================
-  // ✅ Confirmation
-  // ===============================
-  confirmBtn.onclick = () => {
-    state.consequenceIndex++;
-    localStorage.setItem("etatJeu", JSON.stringify(state));
-    redirectNext(state);
-  };
+  
 
 }
 
@@ -226,6 +224,7 @@ function skip(state) {
 }
 
 function syncGroupes() {
+  console.log(state.joueurs);
     // groupes "permanents"
     state.groupes = state.groupes.map(groupe =>
         groupe.map(j =>

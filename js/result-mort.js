@@ -152,7 +152,7 @@ function removeDeadPlayers() {
 // 🔀 Redirection vers la suite
 // ===============================
 function redirectNext() {
-  /*const s = state.solutionSelectionnee;
+  const s = state.solutionSelectionnee;
 
   if(!s.consequences[state.consequenceIndex]){
     // Fin → nouvelle situation
@@ -185,7 +185,7 @@ function redirectNext() {
   if (s.consequences[state.consequenceIndex].type=="groupe") {
     window.location.href = "result-groupe.html";
     return;
-  }*/
+  }
 }
 
 

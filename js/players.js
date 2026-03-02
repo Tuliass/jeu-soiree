@@ -110,20 +110,27 @@ startButton.addEventListener("click", () => {
     objet: null,
     statut: null
   }));
+  
+  //joueursFinal[0].statut=3;
+  /*joueursFinal[1].statut=3;
+  joueursFinal[2].statut=3;
+  joueursFinal[0].statut=3;*/
+
+  joueursFinal[0].objet=5;
+  joueursFinal[2].objet=5;
+  /*
+    
   joueursFinal[0].objet=5;
   joueursFinal[1].objet=5;
   joueursFinal[2].objet=5;
-  joueursFinal[0].pv=2;
-  joueursFinal[1].pv=2;
-  joueursFinal[2].pv=2;
-  /*joueursFinal[3].objet=5;
+  joueursFinal[3].objet=5;
   joueursFinal[4].objet=5;
   joueursFinal[5].objet=5;
   joueursFinal[4].statut=1;
   joueursFinal[1].pv=2;
   joueursFinal[3].pv=5;*/
   //const groupesFinal = [[joueursFinal[0],joueursFinal[1]],[joueursFinal[2],joueursFinal[3],joueursFinal[4]],[joueursFinal[5]]];
-  const groupesFinal = [[joueursFinal[0],joueursFinal[1], ],[joueursFinal[2]]];
+  const groupesFinal = [[joueursFinal[0],joueursFinal[1]],[joueursFinal[2],joueursFinal[3]]];
   state.joueurs = joueursFinal;
   state.groupes = groupesFinal;
   state.themeActuel = theme;
