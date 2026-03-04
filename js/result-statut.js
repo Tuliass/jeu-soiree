@@ -14,6 +14,7 @@ const solution = state.solutionSelectionnee;
 const consequence = solution.consequences[state.consequenceIndex];
 const groupNb = consequence.groupNb;
 const statutId = consequence.statutId;
+const action = consequence.statutAction;
 
 const descriptionEl = document.getElementById("result-description");
 descriptionEl.textContent = applyTemplate(
@@ -21,9 +22,6 @@ descriptionEl.textContent = applyTemplate(
   state.contexteSituation
 );
 
-if (!groupNb || !statutId) {
-  redirectNext();
-}
 
 // ===============================
 // 👤 Récupérer joueur concerné
@@ -32,24 +30,29 @@ const joueurNom =
   state.contexteSituation["membreGroupe" + groupNb];
 
 if (!joueurNom) {
+  state.consequenceIndex++;
+  localStorage.setItem("etatJeu", JSON.stringify(state));
   redirectNext();
 }
 
-const statut = state.statuts.find(s => s.statutId === statutId);
-if (!statut) {
-  redirectNext();
+let statut;
+if(statutId!=0){ //Si c'est un gain de statut on récupère le statut à gagner
+   statut = state.statuts.find(s => s.statutId === statutId);
+  if (!statut) {
+    state.consequenceIndex++;
+    localStorage.setItem("etatJeu", JSON.stringify(state));
+    redirectNext();
+  }
 }
-
-
-// ===============================
-// 🔄 Mise à jour joueur
-// ===============================
-updateStatut(joueurNom, statutId);
+else{ //Sinon on récupère le statut actueldu joueur.
+  const joueur= state.joueurs.find(j => j.nom === joueurNom);
+  statut = state.statuts.find(s => s.statutId === joueur.statut);
+}
 
 // ===============================
 // 🎨 Affichage
 // ===============================
-renderResult(joueurNom, statut);
+renderResult(joueurNom, statut, action);
 
 // ===============================
 // ▶️ Continuer
@@ -57,6 +60,10 @@ renderResult(joueurNom, statut);
 document
   .getElementById("continue-btn")
   .addEventListener("click", () => {
+    // ===============================
+    // 🔄 Mise à jour joueur
+    // ===============================
+    updateStatut(joueurNom, statutId, action);
 
     state.consequenceIndex++;
     localStorage.setItem("etatJeu", JSON.stringify(state));
@@ -66,12 +73,18 @@ document
 // ===============================
 // 🔄 Fonction update
 // ===============================
-function updateStatut(nom, statutId) {
-
+function updateStatut(nom, statutId, action) {
+  let nouveauStatut;
+  if(action === "gain"){
+    nouveauStatut=statutId;
+  }
+  if(action === "perte"){
+    nouveauStatut=null;
+  }
   // joueurs globaux
   state.joueurs.forEach(j => {
     if (j.nom === nom) {
-      j.statut = statutId;
+      j.statut = nouveauStatut;
     }
   });
 
@@ -79,7 +92,7 @@ function updateStatut(nom, statutId) {
   state.groupes.forEach(groupe => {
     groupe.forEach(j => {
       if (j.nom === nom) {
-        j.statut = statutId;
+        j.statut = nouveauStatut;
       }
     });
   });
@@ -88,7 +101,7 @@ function updateStatut(nom, statutId) {
   state.groupesSituation.forEach(groupe => {
     groupe.forEach(j => {
       if (j.nom === nom) {
-        j.statut = statutId;
+        j.statut = nouveauStatut;
       }
     });
   });
@@ -99,7 +112,7 @@ function updateStatut(nom, statutId) {
 // ===============================
 // 🎨 Rendu UI
 // ===============================
-function renderResult(nom, statut) {
+function renderResult(nom, statut, action) {
 
   const container =
     document.getElementById("result-content");
@@ -111,9 +124,15 @@ function renderResult(nom, statut) {
   img.classList.add("statut-icon");
 
   const text = document.createElement("p");
-  text.innerHTML =
+  if(action==="gain"){
+    text.innerHTML =
     `<strong>${nom}</strong> est maintenant : <strong>${statut.statutNom}</strong>`;
-
+  }
+  if(action==="perte"){
+    text.innerHTML =
+    `<strong>${nom}</strong> n'est plus : <strong>${statut.statutNom}</strong>`;
+  }
+  
   const description = document.createElement("p");
   description.innerHTML =
     `${statut.statutDescription}`;
