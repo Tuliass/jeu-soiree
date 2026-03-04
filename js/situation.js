@@ -95,12 +95,8 @@ chargerData().then(({ situations, solutions }) => {
   } 
   // 🆕 NOUVELLE SITUATION
   else {
-    joueurActif =
-      state.joueurs[Math.floor(Math.random() * state.joueurs.length)];
-
-    const groupePrincipal = state.groupes.find(g =>
-      g.some(j => j.id === joueurActif.id)
-    );
+    groupePrincipal=state.groupes[Math.floor(Math.random() * state.groupes.length)];
+    joueurActif = groupePrincipal[Math.floor(Math.random() * groupePrincipal.length)];
 
     const situationsTheme = situations.filter(
       s =>
