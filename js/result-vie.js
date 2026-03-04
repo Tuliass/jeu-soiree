@@ -53,6 +53,12 @@ if (maxPossible === 0) {
   redirectNext();
 }
 
+if(groupe.filter(j => j.statut===1).length==groupe.length && totalPv>0){ //tous les joueurs malades (statut=1) et on veut récup des pv => on passe à la suite
+  state.consequenceIndex++;
+  localStorage.setItem("etatJeu", JSON.stringify(state));
+  redirectNext();
+}
+
 
 if (totalPv < 0) {
   const totalDisponible = groupe.reduce(
@@ -148,9 +154,18 @@ info.append(name, hearts);
     }
   });
 
+  // ===============================
+  // Cas où le joueur est malade et on doit donner des pv
+  // ===============================
+  if(joueur.statut === 1 && totalPv>0){
+    plus.disabled=true;
+  }
+
   row.append(info, minus, value, plus);
   playersContainer.appendChild(row);
 });
+
+
 
 // ===============================
 // ✅ Validation
