@@ -115,11 +115,8 @@ startButton.addEventListener("click", () => {
   /*joueursFinal[1].statut=3;
   joueursFinal[2].statut=3;
   joueursFinal[0].statut=3;*/
-
-  joueursFinal[0].objet=5;
-  joueursFinal[2].objet=5;
-  joueursFinal[0].statut=1;
-  joueursFinal[2].statut=1;
+  joueursFinal[0].statut=4;
+  joueursFinal[2].statut=4;
   /*
     
   joueursFinal[0].objet=5;

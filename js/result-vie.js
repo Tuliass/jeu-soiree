@@ -53,7 +53,19 @@ if (maxPossible === 0) {
   redirectNext();
 }
 
-if(groupe.filter(j => j.statut===1).length==groupe.length && totalPv>0){ //tous les joueurs malades (statut=1) et on veut récup des pv => on passe à la suite
+// ===============================
+// Si tous les joueurs malades (statut=1) et on veut récup des pv => on passe à la suite
+// ===============================
+if(groupe.filter(j => j.statut===1).length==groupe.length && totalPv>0){ 
+  state.consequenceIndex++;
+  localStorage.setItem("etatJeu", JSON.stringify(state));
+  redirectNext();
+}
+
+// ===============================
+// Si tous les joueurs chanceux (statut=4) et on veut perdre des pv => on passe à la suite
+// ===============================
+if(groupe.filter(j => j.statut===4).length==groupe.length && totalPv<0){ 
   state.consequenceIndex++;
   localStorage.setItem("etatJeu", JSON.stringify(state));
   redirectNext();
@@ -61,7 +73,7 @@ if(groupe.filter(j => j.statut===1).length==groupe.length && totalPv>0){ //tous 
 
 
 if (totalPv < 0) {
-  const totalDisponible = groupe.reduce(
+  const totalDisponible = groupe.filter(j => j.statut!=4).reduce( //On retire du total dispo les joueurs chanceux pour éviter une situation bloquante
     (sum, j) => sum + j.pv,
     0
   );
@@ -158,6 +170,13 @@ info.append(name, hearts);
   // Cas où le joueur est malade et on doit donner des pv
   // ===============================
   if(joueur.statut === 1 && totalPv>0){
+    plus.disabled=true;
+  }
+
+  // ===============================
+  // Cas où le joueur est chanceux et on doit enlever des pv
+  // ===============================
+  if(joueur.statut === 4 && totalPv<0){
     plus.disabled=true;
   }
 
