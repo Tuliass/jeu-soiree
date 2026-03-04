@@ -108,7 +108,7 @@ startButton.addEventListener("click", () => {
     nom: joueur.nom || `Joueur ${index + 1}`,
     pv: 10,
     objet: null,
-    statut: null
+    statut: {statutId: null, statutDuree:0}
   }));
   
   //joueursFinal[0].statut=3;
@@ -118,9 +118,9 @@ startButton.addEventListener("click", () => {
   joueursFinal[0].objet=5;
   joueursFinal[1].objet=5;
   joueursFinal[2].objet=5;
-  joueursFinal[0].statut=2;
-  joueursFinal[1].statut=2;
-  joueursFinal[2].statut=2;
+  joueursFinal[0].statut.statutId=2;
+  joueursFinal[1].statut.statutId=2;
+  joueursFinal[2].statut.statutId=2;
   /*
     
   joueursFinal[0].objet=5;

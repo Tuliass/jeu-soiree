@@ -46,7 +46,7 @@ if(statutId!=0){ //Si c'est un gain de statut on récupère le statut à gagner
 }
 else{ //Sinon on récupère le statut actueldu joueur.
   const joueur= state.joueurs.find(j => j.nom === joueurNom);
-  statut = state.statuts.find(s => s.statutId === joueur.statut);
+  statut = state.statuts.find(s => s.statutId === joueur.statut.statutId);
 }
 
 // ===============================
@@ -63,7 +63,7 @@ document
     // ===============================
     // 🔄 Mise à jour joueur
     // ===============================
-    updateStatut(joueurNom, statutId, action);
+    updateStatut(joueurNom, statut, action);
 
     state.consequenceIndex++;
     localStorage.setItem("etatJeu", JSON.stringify(state));
@@ -73,10 +73,10 @@ document
 // ===============================
 // 🔄 Fonction update
 // ===============================
-function updateStatut(nom, statutId, action) {
+function updateStatut(nom, statut, action) {
   let nouveauStatut;
   if(action === "gain"){
-    nouveauStatut=statutId;
+    nouveauStatut=statut;
   }
   if(action === "perte"){
     nouveauStatut=null;
@@ -84,7 +84,8 @@ function updateStatut(nom, statutId, action) {
   // joueurs globaux
   state.joueurs.forEach(j => {
     if (j.nom === nom) {
-      j.statut = nouveauStatut;
+      j.statut.statutId = nouveauStatut.statutId;
+      j.statut.statutDuree=nouveauStatut.statutDuree;
     }
   });
 
@@ -92,7 +93,8 @@ function updateStatut(nom, statutId, action) {
   state.groupes.forEach(groupe => {
     groupe.forEach(j => {
       if (j.nom === nom) {
-        j.statut = nouveauStatut;
+        j.statut.statutId = nouveauStatut.statutId;
+        j.statut.statutDuree=nouveauStatut.statutDuree;
       }
     });
   });
@@ -101,7 +103,8 @@ function updateStatut(nom, statutId, action) {
   state.groupesSituation.forEach(groupe => {
     groupe.forEach(j => {
       if (j.nom === nom) {
-        j.statut = nouveauStatut;
+        j.statut.statutId = nouveauStatut.statutId;
+        j.statut.statutDuree=nouveauStatut.statutDuree;
       }
     });
   });
@@ -257,8 +260,8 @@ function renderGroupsModal() {
         const icons = document.createElement("div");
         icons.classList.add("player-icons");
   
-        if (joueur.statut) {
-          const statut = state.statuts.find(s => s.statutId === joueur.statut);
+        if (joueur.statut.statutId) {
+          const statut = state.statuts.find(s => s.statutId === joueur.statut.statutId);
           if (statut) {
             const img = document.createElement("img");
             img.src = `./assets/${statut.statutIcone}`;

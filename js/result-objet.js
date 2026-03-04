@@ -140,7 +140,7 @@ function init() {
     let selectedAction = null;
 
     //Si le joueur est épuisé (statut==3) il ne peut pas récupérer l'objet
-    if(membre.statut==3){
+    if(membre.statut.statutId==3){
       cardKeep.classList.add("disabled");
       const desc = document.getElementById("result-description");
       desc.innerHTML="\n \nVous êtes épuisé. Vous ne pouvez pas récupérer l'objet trouvé";
@@ -327,8 +327,8 @@ function renderGroupsModal() {
         const icons = document.createElement("div");
         icons.classList.add("player-icons");
   
-        if (joueur.statut) {
-          const statut = state.statuts.find(s => s.statutId === joueur.statut);
+        if (joueur.statut.statutId) {
+          const statut = state.statuts.find(s => s.statutId === joueur.statut.statutId);
           if (statut) {
             const img = document.createElement("img");
             img.src = `./assets/${statut.statutIcone}`;

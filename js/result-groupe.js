@@ -218,9 +218,9 @@ function renderGroups(groupes) {
       const icons = document.createElement("div");
       icons.classList.add("player-icons");
 
-      if (joueur.statut) {
+      if (joueur.statut.statutId) {
         const statut =
-          state.statuts.find(s => s.statutId === joueur.statut);
+          state.statuts.find(s => s.statutId === joueur.statut.statutId);
         if (statut) {
           const img = document.createElement("img");
           img.src = `./assets/${statut.statutIcone}`;
@@ -337,8 +337,8 @@ function renderGroupsModal() {
         const icons = document.createElement("div");
         icons.classList.add("player-icons");
   
-        if (joueur.statut) {
-          const statut = state.statuts.find(s => s.statutId === joueur.statut);
+        if (joueur.statut.statutId) {
+          const statut = state.statuts.find(s => s.statutId === joueur.statut.statutId);
           if (statut) {
             const img = document.createElement("img");
             img.src = `./assets/${statut.statutIcone}`;

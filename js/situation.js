@@ -235,7 +235,7 @@ chargerData().then(({ situations, solutions }) => {
   // ===============================
   // 🎒 Gestion du statut bourre
   // ===============================
-  if(joueurActif.statut==5){
+  if(joueurActif.statut.statutId==5){
     const solutionsCards=document.getElementsByClassName("solution-card");
     console.log(solutionsCards);
     let checkValide= false;
@@ -302,7 +302,7 @@ chargerData().then(({ situations, solutions }) => {
     // ===============================
     // 🎒 Gestion statut PV (blessé ou chanceux)
     // ===============================
-    if(joueurActif.statut==2){  //blessé
+    if(joueurActif.statut.statutId==2){  //blessé
       const consequenceBlesse = {
         groupNb: 1,
         type: "vie",
@@ -317,7 +317,7 @@ chargerData().then(({ situations, solutions }) => {
         ...(solutionFinale.consequences || [])
       ];
     }
-    if(joueurActif.statut==6){  //reposé
+    if(joueurActif.statut.statutId==6){  //reposé
       const consequenceRepose = {
         groupNb: 1,
         type: "vie",
@@ -393,11 +393,11 @@ function groupeRemplitCondition(solutionCondition, groupe) {
   if (!solutionCondition) return true;
 
   if (solutionCondition.objetId) {
-    return groupe.filter(j=>j.statut!=3).some(joueur => joueur.objet === solutionCondition.objetId); //Les joueurs épuisés (statutId=3) ne peuvent pas utiliser leur objet
+    return groupe.filter(j=>j.statut.statutId!=3).some(joueur => joueur.objet === solutionCondition.objetId); //Les joueurs épuisés (statutId=3) ne peuvent pas utiliser leur objet
   }
 
   if (solutionCondition.statutId) {
-    return groupe.some(joueur => joueur.statut === solutionCondition.statutId);
+    return groupe.some(joueur => joueur.statut.statutId === solutionCondition.statutId);
   }
 
   return true;
@@ -444,8 +444,8 @@ function renderGroupsModal() {
       const icons = document.createElement("div");
       icons.classList.add("player-icons");
 
-      if (joueur.statut) {
-        const statut = state.statuts.find(s => s.statutId === joueur.statut);
+      if (joueur.statut.statutId) {
+        const statut = state.statuts.find(s => s.statutId === joueur.statut.statutId);
         if (statut) {
           const img = document.createElement("img");
           img.src = `./assets/${statut.statutIcone}`;

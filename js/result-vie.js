@@ -56,7 +56,7 @@ if (maxPossible === 0) {
 // ===============================
 // Si tous les joueurs malades (statut=1) et on veut récup des pv => on passe à la suite
 // ===============================
-if(groupe.filter(j => j.statut===1).length==groupe.length && totalPv>0){ 
+if(groupe.filter(j => j.statut.statutId===1).length==groupe.length && totalPv>0){ 
   state.consequenceIndex++;
   localStorage.setItem("etatJeu", JSON.stringify(state));
   redirectNext();
@@ -65,7 +65,7 @@ if(groupe.filter(j => j.statut===1).length==groupe.length && totalPv>0){
 // ===============================
 // Si tous les joueurs chanceux (statut=4) et on veut perdre des pv => on passe à la suite
 // ===============================
-if(groupe.filter(j => j.statut===4).length==groupe.length && totalPv<0){ 
+if(groupe.filter(j => j.statut.statutId===4).length==groupe.length && totalPv<0){ 
   state.consequenceIndex++;
   localStorage.setItem("etatJeu", JSON.stringify(state));
   redirectNext();
@@ -73,7 +73,7 @@ if(groupe.filter(j => j.statut===4).length==groupe.length && totalPv<0){
 
 
 if (totalPv < 0) {
-  const totalDisponible = groupe.filter(j => j.statut!=4).reduce( //On retire du total dispo les joueurs chanceux pour éviter une situation bloquante
+  const totalDisponible = groupe.filter(j => j.statut.statutId!=4).reduce( //On retire du total dispo les joueurs chanceux pour éviter une situation bloquante
     (sum, j) => sum + j.pv,
     0
   );
@@ -169,14 +169,14 @@ info.append(name, hearts);
   // ===============================
   // Cas où le joueur est malade et on doit donner des pv
   // ===============================
-  if(joueur.statut === 1 && totalPv>0){
+  if(joueur.statut.statutId === 1 && totalPv>0){
     plus.disabled=true;
   }
 
   // ===============================
   // Cas où le joueur est chanceux et on doit enlever des pv
   // ===============================
-  if(joueur.statut === 4 && totalPv<0){
+  if(joueur.statut.statutId === 4 && totalPv<0){
     plus.disabled=true;
   }
 
@@ -351,8 +351,8 @@ function renderGroupsModal() {
         const icons = document.createElement("div");
         icons.classList.add("player-icons");
   
-        if (joueur.statut) {
-          const statut = state.statuts.find(s => s.statutId === joueur.statut);
+        if (joueur.statut.statutId) {
+          const statut = state.statuts.find(s => s.statutId === joueur.statut.statutId);
           if (statut) {
             const img = document.createElement("img");
             img.src = `./assets/${statut.statutIcone}`;
