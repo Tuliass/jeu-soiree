@@ -13,6 +13,7 @@ const state = savedState;
 const solution = state.solutionSelectionnee;
 const consequence = solution.consequences[state.consequenceIndex];
 const groupNb = consequence.groupNb;
+const joueurId=consequence.joueurId;
 const statutId = consequence.statutId;
 const action = consequence.statutAction;
 
@@ -26,14 +27,21 @@ descriptionEl.textContent = applyTemplate(
 // ===============================
 // 👤 Récupérer joueur concerné
 // ===============================
-const joueurNom =
-  state.contexteSituation["membreGroupe" + groupNb];
-
-if (!joueurNom) {
-  state.consequenceIndex++;
-  localStorage.setItem("etatJeu", JSON.stringify(state));
-  redirectNext();
+let joueurNom;
+if(joueurId){
+  joueurNom = state.joueurs.find(j => j.id===joueurId).nom;
 }
+else{
+  joueurNom =
+    state.contexteSituation["membreGroupe" + groupNb];
+
+  if (!joueurNom) {
+    state.consequenceIndex++;
+    localStorage.setItem("etatJeu", JSON.stringify(state));
+    redirectNext();
+  }
+}
+
 
 let statut;
 if(statutId!=0){ //Si c'est un gain de statut on récupère le statut à gagner
@@ -74,16 +82,14 @@ document
 // 🔄 Fonction update
 // ===============================
 function updateStatut(nom, statut, action) {
-  let nouveauStatut;
+  let nouveauStatut={statutId: null, statutDuree:null}
   if(action === "gain"){
     nouveauStatut=statut;
-  }
-  if(action === "perte"){
-    nouveauStatut=null;
   }
   // joueurs globaux
   state.joueurs.forEach(j => {
     if (j.nom === nom) {
+      console.log(j);
       j.statut.statutId = nouveauStatut.statutId;
       j.statut.statutDuree=nouveauStatut.statutDuree;
     }
@@ -99,15 +105,18 @@ function updateStatut(nom, statut, action) {
     });
   });
 
-  // groupes situation
-  state.groupesSituation.forEach(groupe => {
-    groupe.forEach(j => {
-      if (j.nom === nom) {
-        j.statut.statutId = nouveauStatut.statutId;
-        j.statut.statutDuree=nouveauStatut.statutDuree;
-      }
+  if(state.groupesSituation){
+    // groupes situation
+    state.groupesSituation.forEach(groupe => {
+      groupe.forEach(j => {
+        if (j.nom === nom) {
+          j.statut.statutId = nouveauStatut.statutId;
+          j.statut.statutDuree=nouveauStatut.statutDuree;
+        }
+      });
     });
-  });
+  }
+
 
   localStorage.setItem("etatJeu", JSON.stringify(state));
 }

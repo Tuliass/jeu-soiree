@@ -127,6 +127,7 @@ chargerData().then(({ situations, solutions }) => {
     state.contexteSituation = contexte;
 
     localStorage.setItem("etatJeu", JSON.stringify(state));
+
     // ===============================
     // 🔥 RÈGLE : un seul groupe restant
     // ===============================
@@ -153,6 +154,38 @@ chargerData().then(({ situations, solutions }) => {
       return;
     }
 
+    // ===============================
+    // 🔥 RÈGLE : Décompte des durée des statuts
+    // ===============================
+    let endStatus=[];
+    state.joueurs.forEach(j => {
+      if(j.statut.statutDuree>0){
+        j.statut.statutDuree--;
+        syncGroupes();
+      }
+      if(j.statut.statutDuree!=null && j.statut.statutDuree<=0){
+        endStatus.push({
+          joueurId: j.id,
+          type: "statut",
+          statutAction: "perte",
+          statutId: 0,
+          description:
+            "L'état de santé du joueur revient à la normale."
+        });
+      }
+    });
+    if(endStatus.length>0){
+      state.consequenceIndex = 0;
+      state.solutionSelectionnee = {
+        consequences: endStatus
+      };
+
+      localStorage.setItem("etatJeu", JSON.stringify(state));
+
+      window.location.href = "result.html";
+      return;
+    }
+    
   }
 
   playerNameEl.textContent = joueurActif.nom;
@@ -403,6 +436,14 @@ function groupeRemplitCondition(solutionCondition, groupe) {
   return true;
 }
 
+function syncGroupes() {
+    // groupes "permanents"
+    state.groupes = state.groupes.map(groupe =>
+        groupe.map(j =>
+        state.joueurs.find(joueur => joueur.id === j.id)
+        )
+    );
+}
 
 function renderGroupsModal() {
   container.innerHTML = "";
@@ -468,11 +509,4 @@ function renderGroupsModal() {
 
     container.appendChild(groupBlock);
   });
-}
-
-
-
-
-function applyBourre(){
-
 }
