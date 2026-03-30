@@ -529,7 +529,7 @@
   },
   {
     "solutionId": 22,
-    "situationId": 9,
+    "situationId": 8,
     "solutionDescription": "Vous cherchez des armes sur les cadavres vous permettant de vous battre contre les zombies. Ils ne sont pas si nombreux vous trouverez sûrement de quoi les éliminer.",
     "solutionCondition": {
       "statutId": null,
@@ -553,7 +553,7 @@
   },
   {
     "solutionId": 23,
-    "situationId": 9,
+    "situationId": 8,
     "solutionDescription": "Le mur de l'impasse ne fait que 3m de haut. En faisant la courte échelle vous pourrez sûrement le frnachir et vous échapper.",
     "solutionCondition": {
       "statutId": null,
@@ -571,7 +571,7 @@
   },
   {
     "solutionId": 24,
-    "situationId": 9,
+    "situationId": 8,
     "solutionDescription": "Vous vous allongez au milieu des cadavres. La chance vous sourit en ce moment, les zombies vous confondront sûrement pour des cadavres et partiront.",
     "solutionCondition": {
       "statutId": 4,
