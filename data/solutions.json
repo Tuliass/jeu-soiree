@@ -139,13 +139,13 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": -2,
         "description": "{{groupe2}} ont l'air affamés et épuisés. Ils ne sont pas prêts à laisser leurs captifs partir si facilement: un combat se lance! Vous prenez quelques coups mais vous arrivez vite à prendre le dessus et à faire fuir {{groupe2}}"
       },
       {
-        "groupsNb":2,
+        "groupNb":2,
         "type": "vie",
         "nbVie": -5,
         "description": "{{groupe1}} vous ont donné une bonne correction etvous oblige à fuir."
@@ -213,7 +213,7 @@
     },
     "consequences": [
       {
-        "groupsNb":2,
+        "groupNb":2,
         "type": "vie",
         "nbVie": -4,
         "description": "{{groupe2}} se fait titrer dessus de nul part. Ils sont obligés de fuir ne sachant même pas qui les a attaqué."
@@ -251,7 +251,7 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": 4,
         "description": "Vous passez la nuit la plus paisible que vous avez passé depuis le début de l'apocalypse. Cela aurait été parfait si {{membreGroupe1}} n'avait pas pété toute la nuit."
@@ -275,7 +275,7 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": 2,
         "description": "Vous n'avez trouvé que des boites de conserve périmées depuis quelques mois. Ce ne sera pas un festi mais c'est mieux que rien."
@@ -306,14 +306,14 @@
         "objetId": 2
       },
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "statut",
         "statutAction": "gain",
         "description": "Avec ce fusil de chasse vous vous sentez invincible. Vous décider de dormir dans la cabane et de fêter cette victoire en tapant dans les vivres et les bouteilles d'alcool de l'ancien propriétaire. {{membreGroupe1}} abuse particulièrement de la boisson...",
         "statutId":5
       },
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": 5,
         "description": "Malgré une petite gueule de bois, la nuit a quand meme été reposante et faire la fête vous a réchauffer les coeurs."
@@ -337,7 +337,7 @@
         "objetId": 5
       },
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": -4,
         "description": "Au moment où vous rangez la seringue dans votre sac vous entendez la porte exploser. Les zombies déferlent dans la maison. Il n'y  plus le choix il va falloir se battre."
@@ -372,7 +372,7 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": -1,
         "description": "La porte s'avère bien plus difficile à abattre que ce que vous pensiez. Le bruit attire les zombies vers l'arrière du bâtiment. Vous les laissez entrer un par un dans le trou formé dans la porte et les abattez à coup de hâche. C'est long mais efficace et vous permet de vous échapper quasiment indemne."
@@ -389,13 +389,13 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": -1,
         "description": "Vous tombez sur {{groupe2}} se faisant pourchasser par une quinzaine de zombies. Ils ont l'air en mauvaise posture mais avec votre aide ce problème sera vite réglé."
       },
       {
-        "groupsNb":2,
+        "groupNb":2,
         "type": "vie",
         "nbVie": -4,
         "description": "Vous étiez vraiment en mauvaise posture lorsque {{groupe1}} est venu vous sauver. Vous sortez vivants de cette situation mais pas indemne."
@@ -426,7 +426,7 @@
         "objetId": 0
       },
       {
-        "groupsNb":2,
+        "groupNb":2,
         "type": "vie",
         "nbVie": -6,
         "description": "En repartant vous appercevez au loin {{groupe2}} en prise avec des zombies. Ils sont sur le point de gagner mais ils ont subit de gros dégâts. Vous vous en voulez un peu d'avoir fouillé leurs affaires pendant qu'ils se battaient pour leur vie mais c'est l'apocalypse après tout..."
@@ -443,7 +443,7 @@
     },
     "consequences": [
       {
-        "groupsNb":2,
+        "groupNb":2,
         "type": "vie",
         "nbVie": -1,
         "description": "Après avoir sondé les environs vous appercevez des mouvements à une centaine de mètres du camp. C'est {{groupe2}} en prise avec une quinzaine de zombie. D'ici vous n'aurez aucun mal à les aider à les abattre. Le plan se déroule à merveille si on met de côté le moment où vous avez tiré sur {{membreJoueur2}} le confondant avec un zombie. Il n'a pas vraiment bonne mine en même temps..."
@@ -473,7 +473,7 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": 3,
         "description": "Vous avez quand même pu trouver quelques anitdouleurs et bandages ayant échappés aux précédents pillards."
@@ -490,13 +490,13 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": 4,
         "description": "{{membreGroupe1}} se recule de quelques mètres et enfonce la porte avec son épaule. Le verrou saute et la porte s'ouvre en grand. {{groupe1]] sautent à l'intérieur de la pièce les armes à la main parés au combat. Mais au lieu de tomber sur des zombies ils tombent sur {{groupe2}} en train de copuler... Après ce premier moment génant vous discutez et {{groupe2}} vous propose de partager les médicaments et bandages qu'ils ont trouvé dans la réserve."
       },
       {
-        "groupsNb":2,
+        "groupNb":2,
         "type": "vie",
         "nbVie": 4,
         "description": ""
@@ -520,7 +520,7 @@
     },
     "consequences": [
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": 8,
         "description": "En entrant dans la pièce. Plutôt que de tomber sur des zombies, vous y trouvez {{groupe2}} en train de faire l'amour. Fort heureusement ils sont obnubilés par leurs ébats et ne vous remarque pas. Vous en profiter pour voler le sac qu'ils ont remplis de médicaments et bandages qu'ils avaient récupéré dans la réserve."
@@ -544,7 +544,7 @@
         "objetId": 1
       },  
       {
-        "groupsNb":1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": -3,
         "description": "Après un combat acharné vous venezà bout de vos assaillants."
