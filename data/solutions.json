@@ -12,7 +12,7 @@
         "groupNb": 1,
         "type": "vie",
         "description": "{{membreGroupe2}} était parti aux toilettes. Il vous surprend la tête dans son sac et vous assène un violent coup. Vous partez en courant de la maison.",
-        "nbVie": -5
+        "nbVie": -2
       },
       {
         "groupNb": 1,
@@ -66,7 +66,7 @@
         "groupNb": 2,
         "type": "vie",
         "description": "Le matin, {{groupe2}} se réveillent soudainement avec des maux de ventre atroces. Après un échange de regards inquiets vous vous mettez tous à vous vomir dessus.",
-        "nbVie": -2
+        "nbVie": -4
       },
       {
         "groupNb": 2,
@@ -75,6 +75,516 @@
         "description": "Au fil de la journée vous commencez à tous vous sentir revivre. Excepté {{membreGroupe2}} qui continue de se vider par tous les orifices.",
         "statutId": 1
       }
+    ]
+  },
+  {
+    "solutionId": 4,
+    "situationId": 2,
+    "solutionDescription": "Vous faites demi tour pour trouver une sortie et contourner la horde.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "description": "Pendant que vous rebroussez chemin, une seconde horde surgit de nul part et entoure votre voiture. Vous n'avez plus le choix, il faut abandonner le vehicule et forcer le passage. Cela risque d'être sanglant...",
+        "nbVie": -6
+      }
+    ]
+  },
+  {
+    "solutionId": 5,
+    "situationId": 2,
+    "solutionDescription": "Vous fermez les yeux et mettez le pieds au plancher. Avec un peu de chance ça va passer...",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "La horde se sépare étrangement en 2 et la voiture passe au milieu sans toucher un seul zombie. Il semble que {{membreGroupe1}} a un ange gardien.",
+        "statutId": 4
+      }
+    ]
+  },
+  {
+    "solutionId": 6,
+    "situationId": 2,
+    "solutionDescription": "Vous proposez de vous éloigner à pieds de la route et d'utiliser le sifflet pour attirer les zombies et libérer la route.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 6
+    },
+    "consequences": [
+      {
+        "groupsNb":[1],
+        "type": "groupe",
+        "groupAction": "scission",
+        "description": "Le plan marche bien, trop bien... La horde de zombie vous fonce dessus. Vous n'avez pas le choix vous devez fuir à pieds. Dans la hâte les différents membres du groupe se perdent de vue."
+      }
+    ]
+  },
+  {
+    "solutionId": 7,
+    "situationId": 3,
+    "solutionDescription": "Vous sortez de votre cachette les armes à la main et vous demandez à {{groupe2}} de relacher {{groupe3}} si ils ne veulent aps d'un bain de sang.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "{{groupe2}} ont l'air affamés et épuisés. Ils ne sont pas prêts à laisser leurs captifs partir si facilement: un combat se lance! Vous prenez quelques coups mais vous arrivez vite à prendre le dessus et à faire fuir {{groupe2}}"
+      },
+      {
+        "groupsNb":2,
+        "type": "vie",
+        "nbVie": -5,
+        "description": "{{groupe1}} vous ont donné une bonne correction etvous oblige à fuir."
+      },
+      {
+        "groupsNb":[1,3],
+        "type": "groupe",
+        "groupAction": "fusion",
+        "description": "{{groupe3}} vous sont très reconnaissant et vous propose de continuer la route ensemble."
+      }
+    ]
+  },
+  {
+    "solutionId": 8,
+    "situationId": 3,
+    "solutionDescription": "Vous sortez de votre cachette les mains en l'air pour proposer à {{groupe2}} de joindre les groupes et de détrousser {{groupe3}}",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 3,
+        "type": "objet",
+        "objetAction": "perte",
+        "description": "En fouillant {{groupe3}} vous trouvez un {{objetNom}}.",
+        "objetId": 0
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "{{groupe2}} récupère l'objet.",
+        "objetId": 0
+      },
+      {
+        "groupNb": 3,
+        "type": "objet",
+        "objetAction": "perte",
+        "description": "Vous continuez de fouiller {{groupe3}} vous trouvez un {{objetNom}}.",
+        "objetId": 0
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "{{groupe1}} récupère l'objet.",
+        "objetId": 0
+      },
+      {
+        "groupsNb":[1,2],
+        "type": "groupe",
+        "groupAction": "fusion",
+        "description": "Commettre des méfaits ensemble ça rapproche! Vous reprenez la route ensemble après avoir détroussé {{groupe3}}."
+      }
+    ]
+  },
+  {
+    "solutionId": 9,
+    "situationId": 3,
+    "solutionDescription": "Vous utilisez votre sniper pour tirer sur {{groupe2}} tout en restant caché.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 3
+    },
+    "consequences": [
+      {
+        "groupsNb":2,
+        "type": "vie",
+        "nbVie": -4,
+        "description": "{{groupe2}} se fait titrer dessus de nul part. Ils sont obligés de fuir ne sachant même pas qui les a attaqué."
+      },
+      {
+        "groupNb": 2,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "{{membreGroupe2}} a été salement touché et saigne fortement.",
+        "statutId": 2
+      },
+      {
+        "groupNb": 3,
+        "type": "objet",
+        "objetAction": "perte",
+        "description": "Vous sortez de votre cachette tout en maintenant en joue {{groupe3}} afin de les détrousser.",
+        "objetId": 0
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Vous laissez ensuite partir {{groupe3}} indemne. VOus n'êtes pas entièrement des monstres non plus.",
+        "objetId": 0
+      }
+    ]
+  },
+  {
+    "solutionId": 10,
+    "situationId": 4,
+    "solutionDescription": "Vous choisissez de passer la nuit dans la cabane. Un bon repos auprès d'une cheminée vous fera du bien.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": 4,
+        "description": "Vous passez la nuit la plus paisible que vous avez passé depuis le début de l'apocalypse. Cela aurait été parfait si {{membreGroupe1}} n'avait pas pété toute la nuit."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "{{membreGroupe1}} s'est vidéde tous ces gaz pendant la nuit. Il se sent revivre...",
+        "statutId": 6
+      }
+    ]
+  },
+  {
+    "solutionId": 11,
+    "situationId": 4,
+    "solutionDescription": "Ce n'est jamais une bonne idée de rester dans des haitations.Si des zoombies vous attaque vous serez coincé. Vous récupérait quelques vivres et partez immédiatement.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": 2,
+        "description": "Vous n'avez trouvé que des boites de conserve périmées depuis quelques mois. Ce ne sera pas un festi mais c'est mieux que rien."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Le lendemain matin, {{membreGroupe1}} a de gros maux de ventre. C'était peut-être pas une si bonne idée de manger des raviolis périmés...",
+        "statutId": 1
+      }
+    ]
+  },
+  {
+    "solutionId": 12,
+    "situationId": 4,
+    "solutionDescription": "Vous utilisez votre crochet pour ouvrir le coffre.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Il devait s'agir d'une cabane de chasseur. Vous trouvez un vieux fusil et des munitions dans le coffre.",
+        "objetId": 2
+      },
+      {
+        "groupsNb":1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Avec ce fusil de chasse vous vous sentez invincible. Vous décider de dormir dans la cabane et de fêter cette victoire en tapant dans les vivres et les bouteilles d'alcool de l'ancien propriétaire. {{membreGroupe1}} abuse particulièrement de la boisson...",
+        "statutId":5
+      },
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": 5,
+        "description": "Malgré une petite gueule de bois, la nuit a quand meme été reposante et faire la fête vous a réchauffer les coeurs."
+      }
+    ]
+  },
+  {
+    "solutionId": 13,
+    "situationId": 5,
+    "solutionDescription": "Vous fouillez frénétiquement la maison en essayant de trouver quelque chose pouvant vous aider à vous battre ou vous échapper.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "La maison ne contient vraiment rien d'intéressant. La seule chose intrigante que vous avez trouvé est une seringue contenant un liquide inconnu. Cela ne va pas trop vous aider avec ces zombies...",
+        "objetId": 5
+      },
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": -4,
+        "description": "Au moment où vous rangez la seringue dans votre sac vous entendez la porte exploser. Les zombies déferlent dans la maison. Il n'y  plus le choix il va falloir se battre."
+      }
+    ]
+  },
+  {
+    "solutionId": 14,
+    "situationId": 5,
+    "solutionDescription": "Vous vous cachez dans des armoires. Avec un peu de chance les zombies ne vous retrouveront pas et finiront par partir.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Etrangement votre plan fonctionne. Les zombies finissent par pénétrer dans la maison et vous cherchent pendant des heures. Un bruit dehors finit par les distraire ce qui vous permet de cous échapper discrètement. Vous vous en sortez indemne mais vous êtes épuisés.",
+        "stautId": 3
+      }
+    ]
+  },
+  {
+    "solutionId": 15,
+    "situationId": 5,
+    "solutionDescription": "Vous utilisez la hache pour défoncer la porte arrière de la maison et vous échapper",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 1
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": -1,
+        "description": "La porte s'avère bien plus difficile à abattre que ce que vous pensiez. Le bruit attire les zombies vers l'arrière du bâtiment. Vous les laissez entrer un par un dans le trou formé dans la porte et les abattez à coup de hâche. C'est long mais efficace et vous permet de vous échapper quasiment indemne."
+      }
+    ]
+  },
+  {
+    "solutionId": 16,
+    "situationId": 6,
+    "solutionDescription": "Vous fouillez les alentours pour trouver les personnes ayant établi ce camp. Personne de censé ne laisserait trainer ses affaires dans ce monde. Ils doivent être soit caché soit en danger.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": -1,
+        "description": "Vous tombez sur {{groupe2}} se faisant pourchasser par une quinzaine de zombies. Ils ont l'air en mauvaise posture mais avec votre aide ce problème sera vite réglé."
+      },
+      {
+        "groupsNb":2,
+        "type": "vie",
+        "nbVie": -4,
+        "description": "Vous étiez vraiment en mauvaise posture lorsque {{groupe1}} est venu vous sauver. Vous sortez vivants de cette situation mais pas indemne."
+      }
+    ]
+  },
+  {
+    "solutionId": 17,
+    "situationId": 6,
+    "solutionDescription": "Vous fouillez les sacs rapidement. Si leurs propriétaires les ont laissé la c'est qu'ils n'en ont plus besoin.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 2,
+        "type": "objet",
+        "objetAction": "perte",
+        "description": "Pendant que {{groupe2}} été occupés à se battre contre une quinzaine de zombies à une centaine de mètres de leur camp. {{groupe1}} fouillent leur sac et leur volent un objet précieux.",
+        "objetId": 0
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Vous trouvez un objet intéressant dans le sac de {{membreGroupe2}}",
+        "objetId": 0
+      },
+      {
+        "groupsNb":2,
+        "type": "vie",
+        "nbVie": -6,
+        "description": "En repartant vous appercevez au loin {{groupe2}} en prise avec des zombies. Ils sont sur le point de gagner mais ils ont subit de gros dégâts. Vous vous en voulez un peu d'avoir fouillé leurs affaires pendant qu'ils se battaient pour leur vie mais c'est l'apocalypse après tout..."
+      }
+    ]
+  },
+  {
+    "solutionId": 18,
+    "situationId": 6,
+    "solutionDescription": "Vous appercevez une tour de garde non loin. En montant en haut vous pourrez utiliser votre sniper pour analyser la zone et vérifier si les propriétaires des sacs sont cachés quelque part.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 3
+    },
+    "consequences": [
+      {
+        "groupsNb":2,
+        "type": "vie",
+        "nbVie": -1,
+        "description": "Après avoir sondé les environs vous appercevez des mouvements à une centaine de mètres du camp. C'est {{groupe2}} en prise avec une quinzaine de zombie. D'ici vous n'aurez aucun mal à les aider à les abattre. Le plan se déroule à merveille si on met de côté le moment où vous avez tiré sur {{membreJoueur2}} le confondant avec un zombie. Il n'a pas vraiment bonne mine en même temps..."
+      },
+      {
+        "groupNb": 2,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Vous étiez persuadé que c'était la fin pour vous quand tout à coup des balles fusent d enulle part en abattant les zombies un par un. Si dieu existe, il a un gros calibre et sait s'en servir.",
+        "stautId": 4
+      },
+      {
+        "groupsNb":[1,2],
+        "type": "groupe",
+        "groupAction": "fusion",
+        "description": "En rentrant à votre camp vous tombez sur {{groupe1}} vous attendant. {{membreGroupe1}} vous annonce qu'il est à l'origine de votre sauvetae. Ce n'était donc pas dieu mais votre sauveteur avait bien un gros calibre. VOus décidez de continuer la route ensemble."
+      }
+    ]
+  },
+  {
+    "solutionId": 19,
+    "situationId": 7,
+    "solutionDescription": "Il vaut mieux être prudent, vous récoltez le peu de denrées et médicaments que vous trouvez et vous partez. Les hôpitaux attirent souvent des pilleurs il ne vaut mieux pas s'y attarder.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": 3,
+        "description": "Vous avez quand même pu trouver quelques anitdouleurs et bandages ayant échappés aux précédents pillards."
+      }
+    ]
+  },
+  {
+    "solutionId": 20,
+    "situationId": 7,
+    "solutionDescription": "Vous forcez la porte de la réserve. Cela va faire du bruit et attirer les zombies derrière mais vous y trouverez surement des denrées précieuses.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": 4,
+        "description": "{{membreGroupe1}} se recule de quelques mètres et enfonce la porte avec son épaule. Le verrou saute et la porte s'ouvre en grand. {{groupe1]] sautent à l'intérieur de la pièce les armes à la main parés au combat. Mais au lieu de tomber sur des zombies ils tombent sur {{groupe2}} en train de copuler... Après ce premier moment génant vous discutez et {{groupe2}} vous propose de partager les médicaments et bandages qu'ils ont trouvé dans la réserve."
+      },
+      {
+        "groupsNb":2,
+        "type": "vie",
+        "nbVie": 4,
+        "description": ""
+      },
+      {
+        "groupsNb":[1,2],
+        "type": "groupe",
+        "groupAction": "fusion",
+        "description": "Après avoir promi que ce moment ne serait jamais re discuté, vous décidez de continuer l'aventure tous ensemble"
+      }
+      
+    ]
+  },
+  {
+    "solutionId": 21,
+    "situationId": 7,
+    "solutionDescription": "Vous utilisez la crochet pour ouvrir la serrure de la réserve. En vous faufilant discrètement vous pourrez vider la pièce sans réveiller les zombies.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 4
+    },
+    "consequences": [
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": 8,
+        "description": "En entrant dans la pièce. Plutôt que de tomber sur des zombies, vous y trouvez {{groupe2}} en train de faire l'amour. Fort heureusement ils sont obnubilés par leurs ébats et ne vous remarque pas. Vous en profiter pour voler le sac qu'ils ont remplis de médicaments et bandages qu'ils avaient récupéré dans la réserve."
+      }      
+    ]
+  },
+  {
+    "solutionId": 22,
+    "situationId": 9,
+    "solutionDescription": "Vous cherchez des armes sur les cadavres vous permettant de vous battre contre les zombies. Ils ne sont pas si nombreux vous trouverez sûrement de quoi les éliminer.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Vous trouvez une hache sur un des cadavres. Elle vous permettra de vous défendre.",
+        "objetId": 1
+      },  
+      {
+        "groupsNb":1,
+        "type": "vie",
+        "nbVie": -3,
+        "description": "Après un combat acharné vous venezà bout de vos assaillants."
+      }      
+    ]
+  },
+  {
+    "solutionId": 22,
+    "situationId": 9,
+    "solutionDescription": "Le mur de l'impasse ne fait que 3m de haut. En faisant la courte échelle vous pourrez sûrement le frnachir et vous échapper.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Le plan fonctionne comme prévu, vous arrivez tous à vous en sortir avant que les zombies n'atteignent l'impasse. {{membreGroupe1}} est cependant épuisé par le fait d'avoir du aider tout le monde à se isser au-dessus du mur.",
+        "statutId": 1
+      }    
+    ]
+  },
+  {
+    "solutionId": 22,
+    "situationId": 9,
+    "solutionDescription": "Vous vous allongez au milieu des cadavres. La chance vous sourit en ce moment, les zombies vous confondront sûrement pour des cadavres et partiront.",
+    "solutionCondition": {
+      "statutId": 4,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Les zombies déboulent dans l'impasse peu de temps après vous mais paraissent débousollé. Ils ont visiblement perdu votre trace mais ils ne quittent pas l'impasse pour autant. Après une nuit passé au milieu des cadavres, les zombies partent enfin et vous pouvez vous échapper. Votre plan a marché mais vous a retourné le ventre...",
+        "statutId": 1
+      }    
     ]
   }
 ]

@@ -2,13 +2,49 @@
   {
     "situationId": 1,
     "themeId": 1,
-    "situationDescription": "En explorant une maison abandonnée la nuit avec {{groupe1}}, vous entendez un bruit à l'étage. Vous tombez sur {{groupe2}} endormis dans une chambre. Que faites-vous ?",
+    "situationDescription": "En explorant une maison abandonnée la nuit, vous entendez un bruit à l'étage. Vous tombez sur {{groupe2}} endormis dans une chambre. Que faites-vous ?",
     "nbGroupes": 2
   },
   {
     "situationId": 2,
-    "themeId": 2,
-    "situationDescription": "",
+    "themeId": 1,
+    "situationDescription": "Vous êtes en voiture sur une ancienne autoroute et vous appercevez une horde de zombie sur la route plus loin. Il n'y a pas de sortie entre vous et la horde, que faites-vous?",
+    "nbGroupes": 1
+  },
+  {
+    "situationId": 3,
+    "themeId": 1,
+    "situationDescription": "Vous entendez des cris au loin venant d'une forêt. Vous allez voir discrètement et vous voyez {{groupe2}} qui sont visiblement tombés dans un piège tenu par {{groupe3}}. Que faites-vous?",
+    "nbGroupes": 3
+  },
+  {
+    "situationId": 4,
+    "themeId": 1,
+    "situationDescription": "En explorant une forêt vous tombez sur une cabane abandonnée. Après l'avoir fouillé entièrement vous ne trouvez qu'un coffre fermé à clé. Que faites-vous?",
+    "nbGroupes": 1
+  },
+  {
+    "situationId": 5,
+    "themeId": 1,
+    "situationDescription": "Vous passez la nuit paisiblement dans une maison abandonnée quand tout d'un coup vous êtes réveillés par des coups répétés sur la porte. Vous allez voir discretement et vous apercevez une dizaine de zombies essayant de rentrer dans la maison. Toutes les autres sorties de la maison semblent fermées à clé, il semble que vous êtes coincés ici. Que faites-vous?",
+    "nbGroupes": 1
+  },
+  {
+    "situationId": 6,
+    "themeId": 1,
+    "situationDescription": "En vous promenant en forêt vous tombez sur les restes d'un camp. Vous ne voyez aaucun humain mais des sacs sont toujours présents autour du feu de camp. Leur propriétaires ne doivent pas être bien loin.",
+    "nbGroupes": 2
+  },
+  {
+    "situationId": 7,
+    "themeId": 1,
+    "situationDescription": "Vous explorez un hôpital mais sans rien trouver de vraiment intéressant. Vous trouvez la porte de la réserve mais elle est fermée à clé et vous entendez des bruits derrière elle, surement des zombies...",
+    "nbGroupes": 2
+  },
+  {
+    "situationId": 8,
+    "themeId": 1,
+    "situationDescription": "Vous êtes poursuivi par une dizaine de zombies et vous arrivez dans une impasse où git des cadavres. Que faites-vous?",
     "nbGroupes": 1
   }
 ]

@@ -9,7 +9,7 @@
   {
     "objetId": 2,
     "objetNom": "Fusil de chasse",
-    "objetDescription": "Ce vieux fusil de chasse vous permettra de vous défendre tout en restant loin du danger. Il n'a cependant pas été bien entretenu.",
+    "objetDescription": "Ce vieux fusil de chasse vous permettra de vous défendre à courte distance. Il n'a cependant pas été bien entretenu.",
     "objetResistance": 0.3,
     "objetIcone": "fusilChasse.svg"
   },
