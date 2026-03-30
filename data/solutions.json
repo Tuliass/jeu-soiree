@@ -295,7 +295,7 @@
     "solutionDescription": "Vous utilisez votre crochet pour ouvrir le coffre.",
     "solutionCondition": {
       "statutId": null,
-      "objetId": null
+      "objetId": 4
     },
     "consequences": [
       {
@@ -493,7 +493,7 @@
         "groupNb":1,
         "type": "vie",
         "nbVie": 4,
-        "description": "{{membreGroupe1}} se recule de quelques mètres et enfonce la porte avec son épaule. Le verrou saute et la porte s'ouvre en grand. {{groupe1]] sautent à l'intérieur de la pièce les armes à la main parés au combat. Mais au lieu de tomber sur des zombies ils tombent sur {{groupe2}} en train de copuler... Après ce premier moment génant vous discutez et {{groupe2}} vous propose de partager les médicaments et bandages qu'ils ont trouvé dans la réserve."
+        "description": "{{membreGroupe1}} se recule de quelques mètres et enfonce la porte avec son épaule. Le verrou saute et la porte s'ouvre en grand. {{groupe1}} sautent à l'intérieur de la pièce les armes à la main parés au combat. Mais au lieu de tomber sur des zombies ils tombent sur {{groupe2}} en train de copuler... Après ce premier moment génant vous discutez et {{groupe2}} vous propose de partager les médicaments et bandages qu'ils ont trouvé dans la réserve."
       },
       {
         "groupNb":2,
@@ -552,7 +552,7 @@
     ]
   },
   {
-    "solutionId": 22,
+    "solutionId": 23,
     "situationId": 9,
     "solutionDescription": "Le mur de l'impasse ne fait que 3m de haut. En faisant la courte échelle vous pourrez sûrement le frnachir et vous échapper.",
     "solutionCondition": {
@@ -570,7 +570,7 @@
     ]
   },
   {
-    "solutionId": 22,
+    "solutionId": 24,
     "situationId": 9,
     "solutionDescription": "Vous vous allongez au milieu des cadavres. La chance vous sourit en ce moment, les zombies vous confondront sûrement pour des cadavres et partiront.",
     "solutionCondition": {
