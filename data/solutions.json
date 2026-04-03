@@ -586,5 +586,230 @@
         "statutId": 1
       }    
     ]
+  },
+  {
+    "solutionId": 25,
+    "situationId": 9,
+    "solutionDescription": "Le bar/tabac: c'est la fin du monde et le village à l'air entèrement vide autant passer une bonne soirée en siphonnant les fûts restants.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Vous récupérez une cartouche de camel, un verre et une chaise pour vous mettre en terrasse et vous vous mettez en tête de vous bourrer la gueule comme jamais. C'est chose réussi, vous passez la meilleure soirée de votre vie et oubliez totalement toute cette histoire de zombie.",
+        "statutId": 5
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Vous allez vous servir une nouvelle pinte mais le fût est vide... Vous allez dans la cave du bar pour en chercher un nouveau. Malheureusement, quand vous ouvrez la porte de la réserve ce n'est pas sur un fût de chouffe que vous tombez mais sur le gérant du bar... zombifié. Il vous saute dessus. Vous cherchez une arme qui pourrait vous permettre de l'abattre et par chance vous trouvez une hâche.",
+        "objetId": 1
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -3,
+        "description": "Le lendemain matin vous vous réveillez avec un énorme mal de crâne et des bleues de partout mais vous avez totalement black-outla soirée de la veille. C'était quelque chose..."
+      },
+      {
+        "groupsNb":[1],
+        "type": "groupe",
+        "groupAction": "scission",
+        "description": "Après un petit temps pour reprendre vos esprits vous remarquez que vous êtes seul dans le village. Il semble que vos coéquipiers ont disparu pendant la nuit. Vous avez tant bu que ça??"
+      }
+    ]
+  },
+  {
+    "solutionId": 26,
+    "situationId": 9,
+    "solutionDescription": "Le poste de police: ACAB mais bon c'est surement là que vous aurez le plus de chance de trouver des armes.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -5,
+        "description": "Malheureusement,des pillards sont manifestement déjà passé par là... L'armurerie du poste de police a déjà entièrement vidé. Vous vous apprétez à sortir quand des zombies vous bloquent le passage un violent combat s'engage."
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "En essayant de trouver une sortie, {{membreGroupe1}} se retranche dans la salle des perquisitions. Vous fouillez les placards à la recherche de drogue, quitte à mourrir autant mourrir défoncé... Mais vous ne trouvez rien d'intéressant à part... Un sniper et des munitions. Il s'en passe des choses dans ce village! Avec ce fusil plus rien ne vous arrête vous sortez de votre cachette et abattez tous les zombies qui trainent dans le poste de police.",
+        "objetId": 3
+      },
+      {
+        "groupsNb":[1],
+        "type": "groupe",
+        "groupAction": "scission",
+        "description": "Une fois le ménage fait vous partez à la recherche de vos coéquipiers mais il vous ne trouvez aucune trace d'eux. Ils ont dû réussir às'échapper au moment du combat."
+      }
+    ]
+  },
+  {
+    "solutionId": 27,
+    "situationId": 9,
+    "solutionDescription": "La pharmacie: Vous êtes médecin et il faut vous soigner.",
+    "solutionCondition": {
+      "statutId": 1,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "perte",
+        "description": "Comme prévu vous trouvez quelques anti-douleurs et autres médicaments. Avec ça vous allez vite être guéri.",
+        "statutId": 0
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Dans l'arrière boutique de la pharmacie vous trouvez une seringue contenant un liquide inconnu. Vous ne savez pas trop pourquoi mais vous vous sentez obligé de le récupérer.",
+        "objetId": 5
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": 3,
+        "description": "Ce petit moment de calme et de repos dans ce village vous a fait beaucoup de bien vous vous sentez revivre."
+      }
+    ]
+  },
+  {
+    "solutionId": 28,
+    "situationId": 10,
+    "solutionDescription": "Vous proposez à {{groupe2}} de les aider à reprendre le manoir. {{groupe3}} est bien retranché mais ils ne pourront pas défendre le manoir contre vous tous réunis.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 3,
+        "type": "vie",
+        "nbVie": -7,
+        "description": "Cela fait quelques ours que vous avez récupéré ce manoir aux mains de {{groupe2}}. Ils y avaient accumulées de nombreuses denrées et vous vous la coulez douce depuis. Après la défaite que vous leur avait donné ils n'oseront pas revenir de di tôt. Du moins c'est ce que vous pensez... {{membreGroupe3}} les apperçoit soudain arriver à l'assaut. Mais cette fois ils sont 2 fois plus nombreux, la bataille s'avère rude..."
+      },
+      {
+        "groupNb": 2,
+        "type": "vie",
+        "nbVie": -3,
+        "description": "Avec l'aide de {{groupe1}} vous avez réussi à reprendre le manoir et à chasser {{groupe3}}. Malheureusement, ils sont partis avec la majorité des vivres et la bataille à tout saccagé..."
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "Bien que {{groupe2}} était au devant d ela bataille et ont pris la majorité des coups, votre groupe à également bien morflé."
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Pour vous remercier de votre aide, {{groupe2}} vous propose de garder le peu d'équipement que {{groupe3}} a laissé derriere eux. Vous n'y trouvait rien d'intéressant à part un kit de crochetage.",
+        "objetId": 5
+      }
+    ]
+  },
+  {
+    "solutionId": 29,
+    "situationId": 10,
+    "solutionDescription": "D'après les informations de {{groupe2}}, {{groupe3}} ont récupéré beaucoup d'équipement et ne s'attendent pas à une riposte. Vous pouvez essayer de vous faufiller dans le manoir de nuit pour récupérer des choses.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Comme vous l'a dit {{groupe2}}, le manoir n'est que peu défendu et personne ne monte la garde. Vous parvenez à vous introduire dans le garage sans problème. Vous y trouvez un sifflet, cela ne va pas vous sauver de l'apocalypse mais cela peut être utile dans certaines situations.",
+        "objetId": 6
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Vous continuez à fouiller le garage et vous tombez sur une sorte de boite à outil. Il sagit d'un kit de crochetage.",
+        "objetId": 4
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "Vous continuez l'exploration de la maison en sortant du garage. Vous arrivez dans un couloir faiblement éclairé et entendez des bruits de discussion venant d'une porte au bout du couloir. Visiblement tout le monde ne dort pas... Vous écoutez à toutes les autres portes pour vous assurer de ne pas avoir de mauvaise surprise lorsque vous allez en ouvrir une. Votre choix et fait, vous ouvrez une porte qui semble donner sur une pièce totalement silencieuse. C'était les toilettes... et {{membreGroupe3}}} était en plein caca... Il cri à l'aide pendant que vous tentez de vous échapper. Vous sortez en courant du garage quand vous entendez un coup de feu et sentait une balle vous touchant au niveau des fesses."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Une fois en lieu sûr vous vous examinez et vous êtes surpris de votre que vous ne saignez pas. Par chance la balle à toucher la flasque de whisky que vous gardez toujours dans la poche arrère de votre pantalon!",
+        "statutId": 4
+      }
+      
+    ]
+  },
+  {
+    "solutionId": 30,
+    "situationId": 10,
+    "solutionDescription": "{{groupe3}} ne s'attend pas à une riposte et vous disposez d'un fusil de chasse. En attaquant de nuit vous n'aurez aucun mal à les battre et récupérer l'équipement de {{groupe2}}.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 2
+    },
+    "consequences": [
+      {
+        "groupNb": 3,
+        "type": "vie",
+        "nbVie": -3,
+        "description": "Vous êtes en train de faire la fête dans le manoir que vous avez récupérer des mains de {{groupe2}} il y a quelques jours quand soudain un coup de feu retentit et la porte vole en éclat. Vous avez malheureusement laissé la majorité de vos armes à l'entrée de la maison et vous ne pouvez pas vous défendre. Vous vous enfuyez par la fenêtre sous les coups de feu de {{groupe1}}"
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "{{membreGroupe3}} a été salement ammoché par un coup de feu à l'abdomen.",
+        "statutId": 2
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Comme prévu vous n'avez eu aucun mal à déloger {{groupe3}}. Ces idiots avaient laissé leurs armes à l'entrée de la maison. Ils avaient en particulier un joli hâche de bucheron.",
+        "objetId": 1
+      },
+      {
+        "groupNb": 3,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "Vous continuez d'explorer la maison pour trouver d'autres ressources en commençant par le garage. Quand vous ouvrez la porte une brique vous tombe sur la tête. Un piège rudimentaire mais efficace."
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Contrairement à ce que la présence du piège pourrait laisser penser vous ne trouvez rien de réellement intéressant dans le garage à part des vivres et un sifflet de secours.",
+        "objetId": 6
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "objetAction": "gain",
+        "description": "Bien que le manoir contienne bien moins de ressources que ce que {{groupe2}} vous avez promis il vous a quand même permis d'avoir une bonne nuit de repos.",
+        "objetId": 6
+      }
+      
+    ]
   }
 ]

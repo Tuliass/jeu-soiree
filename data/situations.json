@@ -46,5 +46,17 @@
     "themeId": 1,
     "situationDescription": "Vous êtes poursuivi par une dizaine de zombies et vous arrivez dans une impasse où git des cadavres. Que faites-vous?",
     "nbGroupes": 1
+  },
+  {
+    "situationId": 9,
+    "themeId": 1,
+    "situationDescription": "Vous arrivez sur la place centrale d'un petit village abandonné. Elle est composée d'une petite dizaine de maisons, un bar/tabac, un poste de police et une pharmacie. Quel endroit explorez-vous en 1er?",
+    "nbGroupes": 1
+  },
+  {
+    "situationId": 10,
+    "themeId": 1,
+    "situationDescription": "Vous vous promenez en forêt quand vous tombez sur {{groupe2}} qui ont établi un petit campement. Ils vous expliquent qu'ils s'étaient établi dans un petit manoir pas loin mais qu'ils ont été délogé par {{groupe3}} en se faisant voler tous leurs biens. Que faites-vous?",
+    "nbGroupes": 3
   }
 ]
