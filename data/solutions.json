@@ -132,7 +132,7 @@
   {
     "solutionId": 7,
     "situationId": 3,
-    "solutionDescription": "Vous sortez de votre cachette les armes à la main et vous demandez à {{groupe2}} de relacher {{groupe3}} si ils ne veulent aps d'un bain de sang.",
+    "solutionDescription": "Vous sortez de votre cachette les armes à la main et vous demandez à {{groupe2}} de relacher {{groupe3}} si ils ne veulent pas d'un bain de sang.",
     "solutionCondition": {
       "statutId": null,
       "objetId": null
@@ -148,7 +148,7 @@
         "groupNb":2,
         "type": "vie",
         "nbVie": -5,
-        "description": "{{groupe1}} vous ont donné une bonne correction etvous oblige à fuir."
+        "description": "{{groupe1}} vous ont donné une bonne correction et vous oblige à fuir."
       },
       {
         "groupsNb":[1,3],
@@ -168,6 +168,12 @@
     },
     "consequences": [
       {
+        "groupNb":3,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "{{groupe3}} résiste mais après quelques coups ils acceptent devous donner ce qu'il ont si vous les laissez partir."
+      },
+      {
         "groupNb": 3,
         "type": "objet",
         "objetAction": "perte",
@@ -178,21 +184,7 @@
         "groupNb": 1,
         "type": "objet",
         "objetAction": "gain",
-        "description": "{{groupe2}} récupère l'objet.",
-        "objetId": 0
-      },
-      {
-        "groupNb": 3,
-        "type": "objet",
-        "objetAction": "perte",
-        "description": "Vous continuez de fouiller {{groupe3}} vous trouvez un {{objetNom}}.",
-        "objetId": 0
-      },
-      {
-        "groupNb": 1,
-        "type": "objet",
-        "objetAction": "gain",
-        "description": "{{groupe1}} récupère l'objet.",
+        "description": "{{membreGroupe1}} récupère l'objet.",
         "objetId": 0
       },
       {
@@ -236,7 +228,7 @@
         "groupNb": 1,
         "type": "objet",
         "objetAction": "gain",
-        "description": "Vous laissez ensuite partir {{groupe3}} indemne. VOus n'êtes pas entièrement des monstres non plus.",
+        "description": "Vous laissez ensuite partir {{groupe3}} indemne. Vous n'êtes pas entièrement des monstres non plus.",
         "objetId": 0
       }
     ]
@@ -260,7 +252,7 @@
         "groupNb": 1,
         "type": "statut",
         "statutAction": "gain",
-        "description": "{{membreGroupe1}} s'est vidéde tous ces gaz pendant la nuit. Il se sent revivre...",
+        "description": "{{membreGroupe1}} s'est vidé de tous ses gaz pendant la nuit. Il se sent revivre...",
         "statutId": 6
       }
     ]
@@ -268,7 +260,7 @@
   {
     "solutionId": 11,
     "situationId": 4,
-    "solutionDescription": "Ce n'est jamais une bonne idée de rester dans des haitations.Si des zoombies vous attaque vous serez coincé. Vous récupérait quelques vivres et partez immédiatement.",
+    "solutionDescription": "Ce n'est jamais une bonne idée de rester dans des habitations. Si des zoombies vous attaque vous serez coincé. Vous récupérez quelques vivres et partez immédiatement.",
     "solutionCondition": {
       "statutId": null,
       "objetId": null
@@ -278,7 +270,7 @@
         "groupNb":1,
         "type": "vie",
         "nbVie": 2,
-        "description": "Vous n'avez trouvé que des boites de conserve périmées depuis quelques mois. Ce ne sera pas un festi mais c'est mieux que rien."
+        "description": "Vous n'avez trouvé que des boites de conserve périmées depuis quelques mois. Ce ne sera pas un festin mais c'est mieux que rien."
       },
       {
         "groupNb": 1,
@@ -358,7 +350,7 @@
         "type": "statut",
         "statutAction": "gain",
         "description": "Etrangement votre plan fonctionne. Les zombies finissent par pénétrer dans la maison et vous cherchent pendant des heures. Un bruit dehors finit par les distraire ce qui vous permet de cous échapper discrètement. Vous vous en sortez indemne mais vous êtes épuisés.",
-        "stautId": 3
+        "statutId": 3
       }
     ]
   },
@@ -391,7 +383,7 @@
       {
         "groupNb":1,
         "type": "vie",
-        "nbVie": -1,
+        "nbVie": -2,
         "description": "Vous tombez sur {{groupe2}} se faisant pourchasser par une quinzaine de zombies. Ils ont l'air en mauvaise posture mais avec votre aide ce problème sera vite réglé."
       },
       {
@@ -429,7 +421,7 @@
         "groupNb":2,
         "type": "vie",
         "nbVie": -6,
-        "description": "En repartant vous appercevez au loin {{groupe2}} en prise avec des zombies. Ils sont sur le point de gagner mais ils ont subit de gros dégâts. Vous vous en voulez un peu d'avoir fouillé leurs affaires pendant qu'ils se battaient pour leur vie mais c'est l'apocalypse après tout..."
+        "description": "Après avoir récupéré les objets de valeur dans les sacs vous repartez tranquillement. Vous appercevez au loin {{groupe2}} en prise avec des zombies. Ils sont sur le point de gagner mais ils ont subit de gros dégâts. Vous vous en voulez un peu d'avoir fouillé leurs affaires pendant qu'ils se battaient pour leur vie mais c'est l'apocalypse après tout..."
       }
     ]
   },
@@ -446,20 +438,20 @@
         "groupNb":2,
         "type": "vie",
         "nbVie": -1,
-        "description": "Après avoir sondé les environs vous appercevez des mouvements à une centaine de mètres du camp. C'est {{groupe2}} en prise avec une quinzaine de zombie. D'ici vous n'aurez aucun mal à les aider à les abattre. Le plan se déroule à merveille si on met de côté le moment où vous avez tiré sur {{membreJoueur2}} le confondant avec un zombie. Il n'a pas vraiment bonne mine en même temps..."
+        "description": "Après avoir sondé les environs vous appercevez des mouvements à une centaine de mètres du camp. C'est {{groupe2}} en prise avec une quinzaine de zombie. D'ici vous n'aurez aucun mal à les aider à les abattre. Le plan se déroule à merveille si on met de côté le moment où vous avez tiré sur {{membreGroupe2}} le confondant avec un zombie. Il n'a pas vraiment bonne mine en même temps..."
       },
       {
         "groupNb": 2,
         "type": "statut",
         "statutAction": "gain",
-        "description": "Vous étiez persuadé que c'était la fin pour vous quand tout à coup des balles fusent d enulle part en abattant les zombies un par un. Si dieu existe, il a un gros calibre et sait s'en servir.",
-        "stautId": 4
+        "description": "Vous étiez persuadé que c'était la fin pour vous quand tout à coup des balles fusent de nulle part en abattant les zombies un par un. Si dieu existe, il a un gros calibre et sait s'en servir.",
+        "statutId": 4
       },
       {
         "groupsNb":[1,2],
         "type": "groupe",
         "groupAction": "fusion",
-        "description": "En rentrant à votre camp vous tombez sur {{groupe1}} vous attendant. {{membreGroupe1}} vous annonce qu'il est à l'origine de votre sauvetae. Ce n'était donc pas dieu mais votre sauveteur avait bien un gros calibre. VOus décidez de continuer la route ensemble."
+        "description": "En rentrant à votre camp vous tombez sur {{groupe1}} vous attendant. {{membreGroupe1}} vous annonce qu'il est à l'origine de votre sauvetage. Ce n'était donc pas dieu mais votre sauveur avait bien un gros calibre. Vous décidez de continuer la route ensemble."
       }
     ]
   },
@@ -492,13 +484,13 @@
       {
         "groupNb":1,
         "type": "vie",
-        "nbVie": 4,
+        "nbVie": 3,
         "description": "{{membreGroupe1}} se recule de quelques mètres et enfonce la porte avec son épaule. Le verrou saute et la porte s'ouvre en grand. {{groupe1}} sautent à l'intérieur de la pièce les armes à la main parés au combat. Mais au lieu de tomber sur des zombies ils tombent sur {{groupe2}} en train de copuler... Après ce premier moment génant vous discutez et {{groupe2}} vous propose de partager les médicaments et bandages qu'ils ont trouvé dans la réserve."
       },
       {
         "groupNb":2,
         "type": "vie",
-        "nbVie": 4,
+        "nbVie": 3,
         "description": ""
       },
       {
@@ -522,7 +514,7 @@
       {
         "groupNb":1,
         "type": "vie",
-        "nbVie": 8,
+        "nbVie": 6,
         "description": "En entrant dans la pièce. Plutôt que de tomber sur des zombies, vous y trouvez {{groupe2}} en train de faire l'amour. Fort heureusement ils sont obnubilés par leurs ébats et ne vous remarque pas. Vous en profiter pour voler le sac qu'ils ont remplis de médicaments et bandages qu'ils avaient récupéré dans la réserve."
       }      
     ]
@@ -554,7 +546,7 @@
   {
     "solutionId": 23,
     "situationId": 8,
-    "solutionDescription": "Le mur de l'impasse ne fait que 3m de haut. En faisant la courte échelle vous pourrez sûrement le frnachir et vous échapper.",
+    "solutionDescription": "Le mur de l'impasse ne fait que 3m de haut. En faisant la courte échelle vous pourrez sûrement le franchir et vous échapper.",
     "solutionCondition": {
       "statutId": null,
       "objetId": null
@@ -565,7 +557,7 @@
         "type": "statut",
         "statutAction": "gain",
         "description": "Le plan fonctionne comme prévu, vous arrivez tous à vous en sortir avant que les zombies n'atteignent l'impasse. {{membreGroupe1}} est cependant épuisé par le fait d'avoir du aider tout le monde à se isser au-dessus du mur.",
-        "statutId": 1
+        "statutId": 3
       }    
     ]
   },
@@ -607,7 +599,7 @@
         "groupNb": 1,
         "type": "objet",
         "objetAction": "gain",
-        "description": "Vous allez vous servir une nouvelle pinte mais le fût est vide... Vous allez dans la cave du bar pour en chercher un nouveau. Malheureusement, quand vous ouvrez la porte de la réserve ce n'est pas sur un fût de chouffe que vous tombez mais sur le gérant du bar... zombifié. Il vous saute dessus. Vous cherchez une arme qui pourrait vous permettre de l'abattre et par chance vous trouvez une hâche.",
+        "description": "Vous allez vous servir une nouvelle pinte mais le fût est vide... Vous allez dans la cave du bar pour en chercher un nouveau fût. Malheureusement, quand vous ouvrez la porte de la réserve ce n'est pas sur un fût de chouffe que vous tombez mais sur le gérant du bar... zombifié. Il vous saute dessus. Vous cherchez une arme qui pourrait vous permettre de l'abattre et par chance vous trouvez une hâche.",
         "objetId": 1
       },
       {
@@ -657,7 +649,7 @@
   {
     "solutionId": 27,
     "situationId": 9,
-    "solutionDescription": "La pharmacie: Vous êtes médecin et il faut vous soigner.",
+    "solutionDescription": "La pharmacie: Vous êtes malade et il faut vous soigner.",
     "solutionCondition": {
       "statutId": 1,
       "objetId": null
@@ -668,7 +660,7 @@
         "type": "statut",
         "statutAction": "perte",
         "description": "Comme prévu vous trouvez quelques anti-douleurs et autres médicaments. Avec ça vous allez vite être guéri.",
-        "statutId": 0
+        "statutId": 1
       },
       {
         "groupNb": 1,
@@ -697,8 +689,8 @@
       {
         "groupNb": 3,
         "type": "vie",
-        "nbVie": -7,
-        "description": "Cela fait quelques ours que vous avez récupéré ce manoir aux mains de {{groupe2}}. Ils y avaient accumulées de nombreuses denrées et vous vous la coulez douce depuis. Après la défaite que vous leur avait donné ils n'oseront pas revenir de di tôt. Du moins c'est ce que vous pensez... {{membreGroupe3}} les apperçoit soudain arriver à l'assaut. Mais cette fois ils sont 2 fois plus nombreux, la bataille s'avère rude..."
+        "nbVie": -6,
+        "description": "Cela fait quelques jours que vous avez récupéré ce manoir aux mains de {{groupe2}}. Ils y avaient accumulées de nombreuses denrées et vous vous la coulez douce depuis. Après la défaite que vous leur avait donné ils n'oseront pas revenir de di tôt. Du moins c'est ce que vous pensez... {{membreGroupe3}} les apperçoit soudain arriver à l'assaut. Mais cette fois ils sont 2 fois plus nombreux, la bataille s'avère rude..."
       },
       {
         "groupNb": 2,
@@ -710,14 +702,14 @@
         "groupNb": 1,
         "type": "vie",
         "nbVie": -2,
-        "description": "Bien que {{groupe2}} était au devant d ela bataille et ont pris la majorité des coups, votre groupe à également bien morflé."
+        "description": "Bien que {{groupe2}} était au devant de la bataille et ont pris la majorité des coups, votre groupe à également bien morflé."
       },
       {
         "groupNb": 1,
         "type": "objet",
         "objetAction": "gain",
         "description": "Pour vous remercier de votre aide, {{groupe2}} vous propose de garder le peu d'équipement que {{groupe3}} a laissé derriere eux. Vous n'y trouvait rien d'intéressant à part un kit de crochetage.",
-        "objetId": 5
+        "objetId": 6
       }
     ]
   },
@@ -748,13 +740,13 @@
         "groupNb": 1,
         "type": "vie",
         "nbVie": -2,
-        "description": "Vous continuez l'exploration de la maison en sortant du garage. Vous arrivez dans un couloir faiblement éclairé et entendez des bruits de discussion venant d'une porte au bout du couloir. Visiblement tout le monde ne dort pas... Vous écoutez à toutes les autres portes pour vous assurer de ne pas avoir de mauvaise surprise lorsque vous allez en ouvrir une. Votre choix et fait, vous ouvrez une porte qui semble donner sur une pièce totalement silencieuse. C'était les toilettes... et {{membreGroupe3}}} était en plein caca... Il cri à l'aide pendant que vous tentez de vous échapper. Vous sortez en courant du garage quand vous entendez un coup de feu et sentait une balle vous touchant au niveau des fesses."
+        "description": "Vous continuez l'exploration de la maison en sortant du garage. Vous arrivez dans un couloir faiblement éclairé et entendez des bruits de discussion venant d'une porte au bout du couloir. Visiblement tout le monde ne dort pas... Vous écoutez à toutes les autres portes pour vous assurer de ne pas avoir de mauvaise surprise lorsque vous allez en ouvrir une. Votre choix et fait, vous ouvrez une porte qui semble donner sur une pièce totalement silencieuse. C'était les toilettes... et {{membreGroupe3}} était en plein caca... Il cri à l'aide pendant que vous tentez de vous échapper. Vous sortez en courant du garage quand vous entendez un coup de feu et sentait une balle vous touchant au niveau des fesses."
       },
       {
         "groupNb": 1,
         "type": "statut",
         "statutAction": "gain",
-        "description": "Une fois en lieu sûr vous vous examinez et vous êtes surpris de votre que vous ne saignez pas. Par chance la balle à toucher la flasque de whisky que vous gardez toujours dans la poche arrère de votre pantalon!",
+        "description": "Une fois en lieu sûr vous vous examinez et vous êtes surpris de voir que vous ne saignez pas. Par chance la balle a touché la flasque de whisky que vous gardez toujours dans la poche arrère de votre pantalon!",
         "statutId": 4
       }
       
@@ -773,10 +765,10 @@
         "groupNb": 3,
         "type": "vie",
         "nbVie": -3,
-        "description": "Vous êtes en train de faire la fête dans le manoir que vous avez récupérer des mains de {{groupe2}} il y a quelques jours quand soudain un coup de feu retentit et la porte vole en éclat. Vous avez malheureusement laissé la majorité de vos armes à l'entrée de la maison et vous ne pouvez pas vous défendre. Vous vous enfuyez par la fenêtre sous les coups de feu de {{groupe1}}"
+        "description": "Vous êtes en train de faire la fête dans le manoir que vous avez récupéré des mains de {{groupe2}} il y a quelques jours quand soudain un coup de feu retentit et la porte vole en éclat. Vous avez malheureusement laissé la majorité de vos armes à l'entrée de la maison et vous ne pouvez pas vous défendre. Vous vous enfuyez par la fenêtre sous les coups de feu de {{groupe1}}"
       },
       {
-        "groupNb": 1,
+        "groupNb": 3,
         "type": "statut",
         "statutAction": "gain",
         "description": "{{membreGroupe3}} a été salement ammoché par un coup de feu à l'abdomen.",
@@ -790,7 +782,7 @@
         "objetId": 1
       },
       {
-        "groupNb": 3,
+        "groupNb": 1,
         "type": "vie",
         "nbVie": -2,
         "description": "Vous continuez d'explorer la maison pour trouver d'autres ressources en commençant par le garage. Quand vous ouvrez la porte une brique vous tombe sur la tête. Un piège rudimentaire mais efficace."

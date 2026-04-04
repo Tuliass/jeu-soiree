@@ -38,16 +38,27 @@ function init() {
   const solution = state.solutionSelectionnee;
   const consequence = solution.consequences[state.consequenceIndex];
 
+  let objetId = consequence.objetId;
+  const objetAction = consequence.objetAction;
+
   const groupe =
     state.groupesSituation[consequence.groupNb - 1];
 
-  const membreNom =
-    state.contexteSituation[`membreGroupe${consequence.groupNb}`];
+  let membre;
 
-  const membre = state.joueurs.find(j => j.nom === membreNom);
+  //Cas où on sait qui doit perdre quel objet (casse)
+  if(objetAction === "perte" && objetId != 0){
+    membre = groupe.find(j=>j.objet===objetId);
+  }
+  else{
+    const membreNom =
+      state.contexteSituation[`membreGroupe${consequence.groupNb}`];
 
-  let objetId = consequence.objetId;
-  const objetAction = consequence.objetAction;
+    membre = state.joueurs.find(j => j.nom === membreNom);
+  }
+
+
+  
 
 
   // ===============================
@@ -108,12 +119,14 @@ function init() {
         ${membre.nom} a perdu l'objet : ${objet.objetNom}
       </div>`;
 
-    membre.objet = null;
+    state.joueurs.find(j=>j.nom===membre.nom).objet=null
+    
 
     const confirmBtn = document.getElementById("confirm-btn");
     confirmBtn.disabled = false;
     confirmBtn.onclick = () => {
       syncGroupes();
+      
       state.consequenceIndex++;
       localStorage.setItem("etatJeu", JSON.stringify(state));
       redirectNext(state);

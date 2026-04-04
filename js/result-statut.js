@@ -32,8 +32,15 @@ if(joueurId){
   joueurNom = state.joueurs.find(j => j.id===joueurId).nom;
 }
 else{
-  joueurNom =
-    state.contexteSituation["membreGroupe" + groupNb];
+  //Cas où on sait que quelqu'un doit perdre un statut specifique mais on doit trouver qui
+  if(action==="perte" && statutId!=0){
+    joueurNom =
+        state.groupesSituation[consequence.groupNb - 1].find(j=>j.statut.statutId===statutId).nom;
+  }
+  else{
+    joueurNom =
+      state.contexteSituation["membreGroupe" + groupNb];
+  }
 
   if (!joueurNom) {
     state.consequenceIndex++;

@@ -14,7 +14,7 @@
   {
     "situationId": 3,
     "themeId": 1,
-    "situationDescription": "Vous entendez des cris au loin venant d'une forêt. Vous allez voir discrètement et vous voyez {{groupe2}} qui sont visiblement tombés dans un piège tenu par {{groupe3}}. Que faites-vous?",
+    "situationDescription": "Vous entendez des cris au loin venant d'une forêt. Vous allez voir discrètement et vous voyez {{groupe3}} qui sont visiblement tombés dans un piège tenu par {{groupe2}}. Que faites-vous?",
     "nbGroupes": 3
   },
   {
@@ -32,7 +32,7 @@
   {
     "situationId": 6,
     "themeId": 1,
-    "situationDescription": "En vous promenant en forêt vous tombez sur les restes d'un camp. Vous ne voyez aaucun humain mais des sacs sont toujours présents autour du feu de camp. Leur propriétaires ne doivent pas être bien loin.",
+    "situationDescription": "En vous promenant en forêt vous tombez sur les restes d'un camp. Vous ne voyez aucun humain mais des sacs sont toujours présents autour du feu de camp. Leur propriétaires ne doivent pas être bien loin.",
     "nbGroupes": 2
   },
   {

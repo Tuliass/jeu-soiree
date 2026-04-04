@@ -270,13 +270,11 @@ chargerData().then(({ situations, solutions }) => {
   // ===============================
   if(joueurActif.statut.statutId==5){
     const solutionsCards=document.getElementsByClassName("solution-card");
-    console.log(solutionsCards);
     let checkValide= false;
     let solutionByDefault;
     while(!checkValide){
       solutionByDefault= solutionsCards[Math.floor(Math.random() * solutionsCards.length)];
       if(!solutionByDefault.classList.contains("disabled")){
-        console.log(solutionByDefault);
         solutionByDefault.click();
         checkValide=true;
       }
@@ -285,7 +283,7 @@ chargerData().then(({ situations, solutions }) => {
     for (let i = 0; i < solutionsCards.length; i++) {
       solutionsCards[i].classList.add("disabled");
     }
-    situationDescEl.innerText+="\n \n Vous êtes bourré. Vous n'êtes plus mettre de vos choix."
+    situationDescEl.innerText+="\n \n Vous êtes bourré. Vous n'êtes plus maître de vos choix."
 
   }
   
@@ -319,8 +317,8 @@ chargerData().then(({ situations, solutions }) => {
             type: "objet",
             objetAction: "perte",
             description:
-              "{{objetNom}} se casse juste après que vous l'ayez utilisé.",
-            objetId: 0
+              objet.objetNom+" se casse juste après que vous l'ayez utilisé.",
+            objetId: objet.objetId
           };
 
           // Injection en début de chaîne
@@ -341,7 +339,7 @@ chargerData().then(({ situations, solutions }) => {
         type: "vie",
         nbVie: -1,
         description:
-          "{{membreGroupe1}} est blessé. Retirez lui 1 PV",
+          joueurActif.nom+" est blessé. Retirez lui 1 PV",
       };
 
       // Injection en début de chaîne
@@ -356,7 +354,7 @@ chargerData().then(({ situations, solutions }) => {
         type: "vie",
         nbVie: 1,
         description:
-          "{{membreGroupe1}} est reposé. Ajoutez lui 1 PV",
+          joueurActif.nom+" est reposé. Ajoutez lui 1 PV",
       };
 
       // Injection en début de chaîne
@@ -385,7 +383,6 @@ function buildContext(groupes, joueurActif) {
     const i = index + 1;
 
     const noms = groupe
-      .filter(j => j.id !== joueurActif.id)
       .map(j => j.nom);
 
     context[`groupe${i}`] = formatNoms(noms);

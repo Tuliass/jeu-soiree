@@ -126,31 +126,6 @@ startButton.addEventListener("click", () => {
   )
   const groupesFinal = joueursFinal.map((joueur, index) => ([ joueur ]));
   
-  //joueursFinal[0].statut=3;
-  /*joueursFinal[1].statut=3;
-  joueursFinal[2].statut=3;
-  joueursFinal[0].statut=3;
-  joueursFinal[0].objet=5;
-  joueursFinal[1].objet=5;
-  joueursFinal[2].objet=5;
-  joueursFinal[0].statut.statutId=1;
-  joueursFinal[0].statut.statutDuree=1;
-  joueursFinal[1].statut.statutId=1;
-  joueursFinal[1].statut.statutDuree=6;
-  joueursFinal[2].statut.statutId=1;
-  joueursFinal[2].statut.statutDuree=6;
-  
-    
-  joueursFinal[0].objet=5;
-  joueursFinal[1].objet=5;
-  joueursFinal[2].objet=5;
-  joueursFinal[3].objet=5;
-  joueursFinal[4].objet=5;
-  joueursFinal[5].objet=5;
-  joueursFinal[4].statut=1;
-  joueursFinal[1].pv=2;
-  joueursFinal[3].pv=5;
-  const groupesFinal = [[joueursFinal[0],joueursFinal[1]],[joueursFinal[2]]];*/
   state.joueurs = joueursFinal;
   state.groupes = groupesFinal;
   state.themeActuel = theme;
