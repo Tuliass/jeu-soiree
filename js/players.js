@@ -110,6 +110,20 @@ startButton.addEventListener("click", () => {
     objet: null,
     statut: {statutId: null, statutDuree:null}
   }));
+
+  joueursFinal.forEach(joueur => {
+      if(Math.random()>=0.6){
+        
+        joueur.objet=state.objets[Math.floor(Math.random() * state.objets.length)].objetId;
+      }
+      if(Math.random()>=0.8){
+        const statutSelectionne=state.statuts[Math.floor(Math.random() * state.statuts.length)];
+        joueur.statut.statutId=statutSelectionne.statutId;
+        joueur.statut.statutDuree=statutSelectionne.statutDuree;
+      }
+    }
+
+  )
   const groupesFinal = joueursFinal.map((joueur, index) => ([ joueur ]));
   
   //joueursFinal[0].statut=3;
