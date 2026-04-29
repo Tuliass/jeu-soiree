@@ -58,5 +58,17 @@
     "themeId": 1,
     "situationDescription": "Vous vous promenez en forêt quand vous tombez sur {{groupe2}} qui ont établi un petit campement. Ils vous expliquent qu'ils s'étaient établi dans un petit manoir pas loin mais qu'ils ont été délogé par {{groupe3}} en se faisant voler tous leurs biens. Que faites-vous?",
     "nbGroupes": 3
+  },
+  {
+    "situationId": 11,
+    "themeId": 1,
+    "situationDescription": "Vous explorez les étages d'un batiment quand vous entendez des cris venant de la rue. Vous sortez à la fenêtre et vous voyez un groupe de personnes en prise avec une dizaine de zombies. Que faites-vous?",
+    "nbGroupes": 2
+  },
+  {
+    "situationId": 12,
+    "themeId": 1,
+    "situationDescription": "Vous avez trouvé une maison semblant sûre et facile à barricader. Il y a encore de la nourriture et des bouteilles de vin à l'intérieur et il ne semble pas y avoir de zombies aux alentours. Que faite-vous?",
+    "nbGroupes": 1
   }
 ]

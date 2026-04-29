@@ -797,10 +797,158 @@
       {
         "groupNb": 1,
         "type": "statut",
-        "objetAction": "gain",
+        "statutAction": "gain",
         "description": "Bien que le manoir contienne bien moins de ressources que ce que {{groupe2}} vous avez promis il vous a quand même permis d'avoir une bonne nuit de repos.",
-        "objetId": 6
+        "statutId": 6
       }
+      
+    ]
+  },
+  {
+    "solutionId": 31,
+    "situationId": 11,
+    "solutionDescription": "Vous descendez en courant pour attaquer les zombies par surprise et les sauver.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 2,
+        "type": "vie",
+        "nbVie": -3,
+        "description": "Vous menez un combat acharné contre des zombies quand {{groupe1}} débarquent de nul part et rentre dans la bataille à vos côtés. Vous avez pris quelques coups mais grâce à eux vous êtes sauvé."
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "Il y avait plus de zombies que ce que vous aviez vu depuis la fenêtre. Vous avez été légèrement blessé dans le combat mais rien de très grave."
+      },
+      {
+        "groupsNb":[1,2],
+        "type": "groupe",
+        "groupAction": "fusion",
+        "description": "{{groupe2}} vous remercie de leur être venu en aide et vous propose de continuer l'aventure à leurs côtés."
+      }
+    ]
+  },
+  {
+    "solutionId": 32,
+    "situationId": 11,
+    "solutionDescription": "Vous faites comme si vous n'aviez rien entendu et vous profitez que les zombies soient occupés en bas pour fouiller le bâtiment.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Sur le toit du bâtiment vous trouvez un cadavre mort un sniper à la main. Vous récupérez le sniper et l'utilisez pour vérifier si le groupe est toujours en vie. Vous ne les voyez pas dans la ruelle, mais vous voyez les corps de plusieurs zombies, ils ont dû s'en sortir...",
+        "objetId": 4
+      }
+      
+    ]
+  },
+  {
+    "solutionId": 33,
+    "situationId": 11,
+    "solutionDescription": "Vous utilisez votre sifflet pour attirer les zombies dans le bâtiment. Vous avez repérez une sortie de secours qui vous permettra de rejoindre le groupe dans la rue et de vous enfuir avec eux.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 6
+    },
+    "consequences": [
+      {
+        "groupNb": 2,
+        "type": "vie",
+        "nbVie": -1,
+        "description": "Vous êtes en mauvaise posture dans votre combat contre des zombies quand soudain un bruit de sifflet sonne depuis le bâtiment. Cela attire quelques zombies vers l'intérieur. Le peu qu'il reste sont distraits et vous vous en débarassez facilement. Vous vous en sortez presque indemne"
+      },
+      {
+        "groupsNb":[1,2],
+        "type": "groupe",
+        "groupAction": "fusion",
+        "description": "{{groupe1}} sort soudainement du bâtiment par une porte dérobée. Ils vous indiquent qu'ils sont à l'originedu coup de sifflet. Vous vous enfuyez avec avec eux."
+      }
+    ]
+  },
+  {
+    "solutionId": 34,
+    "situationId": 12,
+    "solutionDescription": "On ne peut jamais être trop prudent. Vous mangez rapidement puis vous désignez des tours de garde et vous allez vous reposer.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -4,
+        "description": "Vous êtes réveillés par des petites chatouilles au pieds. Vous entrouvez les yeux et vous voyez un zombie s'apprétant à vous croquer le pieds. Votre cri réveille les autres et une bataille s'enclenche. {{membreGroupe1}} s'était endormi lors de son tour de garde et a laissé entrer plusieurs zombies."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "{{membreGroupe1}} a été le premier exposé aux combats. Sa fatigue lui a couté de lourdes blessures.",
+        "statutId": 2
+      }
+    ]
+  },
+  {
+    "solutionId": 35,
+    "situationId": 12,
+    "solutionDescription": "Vous profitez d'être en lieu sûr pour bien vous reposer et faire la fête. Vous vous préparez un repas de roi avec ce qu'il à dans les frigos.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -4,
+        "description": "La soirée est déjà bien avancée quand vous entendez un gros fracas. Des zombies ont fait voler en éclas la porte de la maison et vous attaquent."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "{{membreGroupe1}} Vous vous réveillez le lendemain avec des blessures partout et un gros mal de crane.",
+        "statutId": 3
+      }
+      
+      
+    ]
+  },
+  {
+    "solutionId": 36,
+    "situationId": 12,
+    "solutionDescription": "Vous profitez d'être en lieu sûr pour tester ce qu'il y a dans la seringue louche. Vous vous piquez tous a tour de role en vous injectant un peu de son liquide.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Les effets apparaissent en quelques minutes et vous vous sentez rentrer dans un état second.",
+        "statutId": 5
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -1,
+        "description": "Vous vous réveillez le lendemain sans aucune idée de ce qu'il s'est passé la veille. En descendant au rez de chaussée vous trouvez la maison détruite avec des dizaines de corps de zombies. Etonnemment vous n'avez que quelques égratignures."
+      }
+      
+      
       
     ]
   }
