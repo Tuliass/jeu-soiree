@@ -70,5 +70,17 @@
     "themeId": 1,
     "situationDescription": "Vous avez trouvé une maison semblant sûre et facile à barricader. Il y a encore de la nourriture et des bouteilles de vin à l'intérieur et il ne semble pas y avoir de zombies aux alentours. Que faite-vous?",
     "nbGroupes": 1
+  },
+  {
+    "situationId": 13,
+    "themeId": 1,
+    "situationDescription": "La nuit tombe et vous tombez une prison abandonnée. Elle doit contenir de nombreuses armes et denrées mais la cour de la prison est remplie de zombies. Que faites-vous?",
+    "nbGroupes": 1
+  },
+  {
+    "situationId": 14,
+    "themeId": 1,
+    "situationDescription": "Vous êtes en forêt et une horde de zombies vous poursuit depuis plusieurs heures. Vous réussissez à maintenir une certaine distance entre eux et vous mais vous ne parvenez jamais vraiment à les semer. A ce rythme là vous vous épuiserez avant de les distancer. Que faites-vous?",
+    "nbGroupes": 1
   }
 ]

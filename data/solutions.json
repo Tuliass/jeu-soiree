@@ -931,7 +931,7 @@
     "solutionDescription": "Vous profitez d'être en lieu sûr pour tester ce qu'il y a dans la seringue louche. Vous vous piquez tous a tour de role en vous injectant un peu de son liquide.",
     "solutionCondition": {
       "statutId": null,
-      "objetId": null
+      "objetId": 5
     },
     "consequences": [
       {
@@ -950,6 +950,147 @@
       
       
       
+    ]
+  },
+  {
+    "solutionId": 37,
+    "situationId": 13,
+    "solutionDescription": "Vous préférez continuer votre route, c'est trop risqué de rester proche d'une si grosse quantité de zombies.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Vous avez marché toute la nuit et vous vous êtes bien éloigné de la prison. Vous êtes hors de danger mais vous n'en pouvez plus.",
+        "statutId": 3
+      }  
+      
+    ]
+  },
+  {
+    "solutionId": 38,
+    "situationId": 13,
+    "solutionDescription": "Vous repérez le bâtiments des cuisines, il est proche de l'entrée. En allant vite et en restant discret vous pourrez y pénétrer et récupérer des vivres en évitant les zombies",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "Vous rentrez dans la cour par un petit trou dans le grillage. Comme prévu tous les zombies sont de l'autre côté de la cour et ne semblent pas vous avoir repéré. Vous vous glissez rapidement dans les cuisines et vous commencez à vider les placards. Tout d'un coup vous vous prenez un violent coup dans le dos. Vous vous retournez et vous tombez sur une dizaine de zombies. Ils ont du rentrer pendant que vous étiez focus sur les vivres..."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Vous vous pensez foutu... Tout d'un coup le bâtiment s'effondre juste au dessus des zombies. Pas le temps de réfléchir à comment cela a pu arriver, vous vous enfuyez de là avec les vivres.",
+        "statutId": 3
+      }  
+      
+    ]
+  },
+  {
+    "solutionId": 39,
+    "situationId": 13,
+    "solutionDescription": "Vous repérez un petit trou dans le grillage. Vous pouvez attirer les zombies et les abattre un par an quand ils sortent",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 2
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Le plan se passe comme prévu, les zombies s'agglutinent sur le grillages et n'arrivent à passer qu'un par un. dès qu'un traverse le grillage vous l'abattez. Une fois tous les zombies tués vous pénétrez dans la cour par le trou dans le grillage mais votre jambe s'accroche au grillage et vous vous écorchez profondément. C'est con de se blesser comme ça...",
+        "statutId": 2
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": 4,
+        "description": "Vous vous ravitaillez dans les cuisines. Cela fait du bien de prendre un bon repas."
+      },
+      {
+        "groupNb": 1,
+        "type": "objet",
+        "objetAction": "gain",
+        "description": "Malheureusement, l'armurerie de la prison avait déjà été vidé. Vous n'y trouvez qu'une hache de pompier.",
+        "objetId": 1
+      }
+      
+    ]
+  },
+  {
+    "solutionId": 40,
+    "situationId": 14,
+    "solutionDescription": "Il va falloir les affronter. Vous utilisez le temps qu'il vous reste pour préparer des piègeset leur tenir une ambuscade.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -4,
+        "description": "Les premiers zombies qui arrivent tombent dans vos pièges et sont immobilisés. Malheureusement, ils sont plus nombreux que prévu et ils vous en reste une bonne dizaine à combattre..."
+      }      
+    ]
+  },
+  {
+    "solutionId": 41,
+    "situationId": 14,
+    "solutionDescription": "Vous vous enduisez de boue pour masquer votre odeur et vous vous cachez dans les feuillages. Avec un peu de chance ils von perdre votre trace et vous pourrez continuer sans vous battre.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -6,
+        "description": "Le plan se déroule plutôt bien, les zombies arrivent à votre niveau et semblent totalement déboussolés. Mais vous aviez oublié quelque vhose d'important, {{membreGroupe1}} est allergique au pollen et est pris du énorme quinte de toux. Les zombies lui sautent dessus et un violent combat s'enclenche."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "En plus d'avoir pris beaucoup de dégats, {{membreGroupe1}} est toujours en crise d'allergie...",
+        "statutId": 1
+      }
+    ]
+  },
+  {
+    "solutionId": 42,
+    "situationId": 14,
+    "solutionDescription": "Vous êtes bien reposé, vous avez encore assez de force pour continuer de marcher quelques heures. Vous trouverez bien un endroit pour vous cacher au bout d'un moment...",
+    "solutionCondition": {
+      "statutId": 6,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -2,
+        "description": "Après avoir marché sur des kilomètres vous trouvez enfin une cabane. Il vous reste jsute assez d'énergiepour vous barricader à l'intérieur et y passer la nuit. Vous êtes hors d'atteinte mais tous vos muscles vous font souffrir..."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Vous n'avez pas fermé l'oeil de la nuit, de peur que les zombies réussissent à rentrer dans la cabane. Vous êtes au bout de votre vie...",
+        "statutId": 3
+      }
     ]
   }
 ]
