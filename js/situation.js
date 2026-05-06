@@ -117,7 +117,6 @@ chargerData().then(({ situations, solutions }) => {
         ...autresGroupes.slice(0, situation.nbGroupes - 1)
       );
     }
-    situation=situationsTheme[13];
 
     contexte = buildContext(groupesSelectionnes, joueurActif);
 
