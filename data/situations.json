@@ -82,5 +82,11 @@
     "themeId": 1,
     "situationDescription": "Vous êtes en forêt et une horde de zombies vous poursuit depuis plusieurs heures. Vous réussissez à maintenir une certaine distance entre eux et vous mais vous ne parvenez jamais vraiment à les semer. A ce rythme là vous vous épuiserez avant de les distancer. Que faites-vous?",
     "nbGroupes": 1
+  },
+  {
+    "situationId": 15,
+    "themeId": 1,
+    "situationDescription": "Cela fais plusieurs jours que vous avez à peine mangé. En explorant une forêt vous tombez sur les traces de 3 sangliers. Elles ont l'air fraiches, vous devrez facilement pouvoir les pister. Que faites-vous?",
+    "nbGroupes": 1
   }
 ]

@@ -847,7 +847,7 @@
         "type": "objet",
         "objetAction": "gain",
         "description": "Sur le toit du bâtiment vous trouvez un cadavre mort un sniper à la main. Vous récupérez le sniper et l'utilisez pour vérifier si le groupe est toujours en vie. Vous ne les voyez pas dans la ruelle, mais vous voyez les corps de plusieurs zombies, ils ont dû s'en sortir...",
-        "objetId": 4
+        "objetId": 3
       }
       
     ]
@@ -871,7 +871,7 @@
         "groupsNb":[1,2],
         "type": "groupe",
         "groupAction": "fusion",
-        "description": "{{groupe1}} sort soudainement du bâtiment par une porte dérobée. Ils vous indiquent qu'ils sont à l'originedu coup de sifflet. Vous vous enfuyez avec avec eux."
+        "description": "{{groupe1}} sort soudainement du bâtiment par une porte dérobée. Ils vous indiquent qu'ils sont à l'origine du coup de sifflet. Vous vous enfuyez avec avec eux."
       }
     ]
   },
@@ -938,7 +938,7 @@
         "groupNb": 1,
         "type": "statut",
         "statutAction": "gain",
-        "description": "Les effets apparaissent en quelques minutes et vous vous sentez rentrer dans un état second.",
+        "description": "Les effets apparaissent en quelques minutes et vous vous sentez rentrer dans un état second. {{membreGroupe1}} paraît particulièrement ailleurs...",
         "statutId": 5
       },
       {
@@ -991,7 +991,7 @@
         "type": "statut",
         "statutAction": "gain",
         "description": "Vous vous pensez foutu... Tout d'un coup le bâtiment s'effondre juste au dessus des zombies. Pas le temps de réfléchir à comment cela a pu arriver, vous vous enfuyez de là avec les vivres.",
-        "statutId": 3
+        "statutId": 4
       }  
       
     ]
@@ -1031,7 +1031,7 @@
   {
     "solutionId": 40,
     "situationId": 14,
-    "solutionDescription": "Il va falloir les affronter. Vous utilisez le temps qu'il vous reste pour préparer des piègeset leur tenir une ambuscade.",
+    "solutionDescription": "Il va falloir les affronter. Vous utilisez le temps qu'il vous reste pour préparer des pièges et leur tenir une ambuscade.",
     "solutionCondition": {
       "statutId": null,
       "objetId": null
@@ -1048,7 +1048,7 @@
   {
     "solutionId": 41,
     "situationId": 14,
-    "solutionDescription": "Vous vous enduisez de boue pour masquer votre odeur et vous vous cachez dans les feuillages. Avec un peu de chance ils von perdre votre trace et vous pourrez continuer sans vous battre.",
+    "solutionDescription": "Vous vous enduisez de boue pour masquer votre odeur et vous vous cachez dans les feuillages. Avec un peu de chance ils vont perdre votre trace et vous pourrez continuer sans vous battre.",
     "solutionCondition": {
       "statutId": null,
       "objetId": null
@@ -1058,7 +1058,7 @@
         "groupNb": 1,
         "type": "vie",
         "nbVie": -6,
-        "description": "Le plan se déroule plutôt bien, les zombies arrivent à votre niveau et semblent totalement déboussolés. Mais vous aviez oublié quelque vhose d'important, {{membreGroupe1}} est allergique au pollen et est pris du énorme quinte de toux. Les zombies lui sautent dessus et un violent combat s'enclenche."
+        "description": "Le plan se déroule plutôt bien, les zombies arrivent à votre niveau et semblent totalement déboussolés. Mais vous aviez oublié quelque chose d'important, {{membreGroupe1}} est allergique au pollen et est pris du énorme quinte de toux. Les zombies lui sautent dessus et un violent combat s'enclenche."
       },
       {
         "groupNb": 1,
@@ -1082,7 +1082,7 @@
         "groupNb": 1,
         "type": "vie",
         "nbVie": -2,
-        "description": "Après avoir marché sur des kilomètres vous trouvez enfin une cabane. Il vous reste jsute assez d'énergiepour vous barricader à l'intérieur et y passer la nuit. Vous êtes hors d'atteinte mais tous vos muscles vous font souffrir..."
+        "description": "Après avoir marché sur des kilomètres vous trouvez enfin une cabane. Il vous reste jsute assez d'énergie pour vous barricader à l'intérieur et y passer la nuit. Vous êtes hors d'atteinte mais tous vos muscles vous font souffrir..."
       },
       {
         "groupNb": 1,
@@ -1090,6 +1090,77 @@
         "statutAction": "gain",
         "description": "Vous n'avez pas fermé l'oeil de la nuit, de peur que les zombies réussissent à rentrer dans la cabane. Vous êtes au bout de votre vie...",
         "statutId": 3
+      }
+    ]
+  },
+  {
+    "solutionId": 43,
+    "situationId": 15,
+    "solutionDescription": "Bien que ce soit la fin du monde, vous ne vous sentez pas en capacité de tuer un animal si mignon. Vous préférez continuer d'explorer la forêt à la recherche de baies ou de fruits.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": 2,
+        "description": "Vous trouvez des petites baies rouges semblables à des cranberries. Cela ne remplit pas vraiment l'estomac mais c'est mieux que rien."
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Après quelques minutes vous vous sentez entrer dans un état second. çane devait pas être des cranberries. {{membreGroupe1}} qui en avait mangé énormément commence à totalement délirer...",
+        "statutId": 5
+      }
+    ]
+  },
+  {
+    "solutionId": 44,
+    "situationId": 15,
+    "solutionDescription": "Vous n'êtes malheureusement pas équipés pour tuer un sanglier. Mais si il y a des sangliers il doit y avoir des plus petites proies. Vous confectionnez des pièges à lapin et vous établissez votre campement un peu plus loin. Avec un peu de chance vous pourrez manger demain",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": null
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -3,
+        "description": "Malheureusement, avoir passé 300h sur the Last Of Us ne vous qualifie pas vraiment en termede survie. Le lendemain les pièges sont tous vides et vos estomacs encore plus..."
+      }
+    ]
+  },
+  {
+    "solutionId": 45,
+    "situationId": 15,
+    "solutionDescription": "Vous remontez la piste du sanglier. Votre sniper vous permettra facilement de l'abattre sans risquer votre vie.",
+    "solutionCondition": {
+      "statutId": null,
+      "objetId": 3
+    },
+    "consequences": [
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": -4,
+        "description": "Après une petite heure de pistage vous appercevez les sangliers au loin. A contrecoeur vous abatez le plus gros ce qui faitfuir les autres. Pendant que vous accrochez l'animal à votre sac pour le ramener à votre campement vous vous faites attaques par 4 zombies. Ils ont du être attiré par le bruit."
+      },
+      {
+        "groupNb": 1,
+        "type": "vie",
+        "nbVie": 7,
+        "description": "Malgré vos mésaventures vous parvenez à ramener le sanglier à votre camp et vous vous faite un repas de roi!"
+      },
+      {
+        "groupNb": 1,
+        "type": "statut",
+        "statutAction": "gain",
+        "description": "Vous vous réveillez le lendemain en pleine forme avec l'estomac plein!",
+        "statutId": 6
       }
     ]
   }
