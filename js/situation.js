@@ -97,6 +97,7 @@ chargerData().then(({ situations, solutions }) => {
   else {
     groupePrincipal=state.groupes[Math.floor(Math.random() * state.groupes.length)];
     joueurActif = groupePrincipal[Math.floor(Math.random() * groupePrincipal.length)];
+    
 
     const situationsTheme = situations.filter(
       s =>
@@ -116,6 +117,7 @@ chargerData().then(({ situations, solutions }) => {
         ...autresGroupes.slice(0, situation.nbGroupes - 1)
       );
     }
+    situation=situationsTheme[13];
 
     contexte = buildContext(groupesSelectionnes, joueurActif);
 
