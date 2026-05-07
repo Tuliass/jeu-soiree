@@ -123,7 +123,7 @@ function fusionnerGroupes(indexes) {
 function scinderGroupe(index) {
 
   const groupe = state.groupesSituation[index - 1];
-  if (!groupe) return [];
+  if (!groupe||groupe.length<=1) return [];
 
   // supprimer groupe original
   state.groupes.splice(index - 1, 1);

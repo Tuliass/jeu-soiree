@@ -390,7 +390,7 @@
         "groupNb":2,
         "type": "vie",
         "nbVie": -4,
-        "description": "Vous étiez vraiment en mauvaise posture lorsque {{groupe1}} est venu vous sauver. Vous sortez vivants de cette situation mais pas indemne."
+        "description": "Vous étiez vraiment en mauvaise posture lorsque {{groupe1}} est venu vous sauver. Vous sortez vivants de cette situation mais pas indemne. Vous remerciez {{groupe1}} et choisissez de partir chacun de votre côté."
       }
     ]
   },
