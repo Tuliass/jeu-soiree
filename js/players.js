@@ -124,6 +124,7 @@ startButton.addEventListener("click", () => {
     }
 
   )
+
   const groupesFinal = joueursFinal.map((joueur, index) => ([ joueur ]));
   
   state.joueurs = joueursFinal;
@@ -142,3 +143,8 @@ document.getElementById("back-home").addEventListener("click", () => {
     }
   });
   
+document
+  .getElementById("create-question-btn")
+  .addEventListener("click", () => {
+    window.location.href = "create-question.html";
+  });

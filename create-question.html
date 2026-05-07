@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Créer une question</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <button id="back-home">⬅</button>
+    <h1>Créer une question</h1>
+    <div></div>
+  </header>
+
+  <main class="create-page">
+
+    <p>Si vous voulez que le jeu affiche des noms de joueurs dans les descriptions il faut utiliser des balises (remplacer le numéro à la fin par le groupe désiré):</p>
+    <ul style="text-align: left">
+        <li>{{groupe1}}: sera remplacé par les noms de tous les joueurs dans le groupe 1</li>
+        <li>{{membreGroupe1}}: sera remplacé par le nom du joueur du groupe 1 qui est sélectionné dans la situation (correspond à la personne qui gagnera les éventuels statuts et/ou objets)</li>
+    </ul>
+    <form id="question-form">
+
+      <!-- ========================== -->
+      <!-- 🎲 SITUATION -->
+      <!-- ========================== -->
+      <section class="form-section">
+        <h2>Situation</h2>
+
+        <label>Description</label>
+        <textarea id="situation-description" required></textarea>
+
+        <label>Nombre de groupes impliqués</label>
+        <input
+          type="number"
+          id="nb-groupes"
+          min="1"
+          max="10"
+          value="1"
+          required
+        />
+      </section>
+
+      <!-- ========================== -->
+      <!-- SOLUTIONS -->
+      <!-- ========================== -->
+      <div id="solutions-container"></div>
+
+      <button
+        type="submit"
+        id="submit-btn"
+        class="primary-btn"
+        disabled
+      >
+        Envoyer la question
+      </button>
+
+    </form>
+
+  </main>
+
+  <script src="js/create-question.js"></script>
+</body>
+</html>
