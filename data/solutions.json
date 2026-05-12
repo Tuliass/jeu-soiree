@@ -325,8 +325,8 @@
         "groupNb": 1,
         "type": "objet",
         "objetAction": "gain",
-        "description": "La maison ne contient vraiment rien d'intéressant. La seule chose intrigante que vous avez trouvé est une seringue contenant un liquide inconnu. Cela ne va pas trop vous aider avec ces zombies...",
-        "objetId": 5
+        "description": "La maison ne contient vraiment rien d'intéressant. La seule chose intrigante que vous avez trouvé est un crochet. Cela ne va pas trop vous aider avec ces zombies...",
+        "objetId": 4
       },
       {
         "groupNb":1,
@@ -1163,5 +1163,140 @@
         "statutId": 6
       }
     ]
-  }
+  },
+  {
+"solutionId": 46,
+"situationId": 16,
+"solutionDescription": "Ils ont la gentillesse de vous héberger pour la nuit, vous leur proposez de partager le peu de vivres que vous avez.",
+"solutionCondition": {
+"statutId": null,
+"objetId": null
+},
+"consequences": [
+{
+"groupNb": 1,
+"type": "vie",
+"nbVie": -2,
+"description": "Vous êtes heureux de passer enfin une nuit en sécurité. Malheureusement, le repas fut extrêmement frugal et vous vous réveillez mourrant de faim..."
+},
+{
+"groupNb": 2,
+"type": "vie",
+"nbVie": -2,
+"description": "Vous êtes heureux de passer enfin une nuit en sécurité. Malheureusement, le repas fut extrêmement frugal et vous vous réveillez mourrant de faim..."
+},
+{
+"groupsNb": [
+1,
+2
+],
+"type": "groupe",
+"groupAction": "fusion",
+"description": "Vous décidez de rester ensemble pour le reste de l'aventure. Avec un peu de chance vous trouverez de quoi manger aujourd'hui."
+}
+]
+},
+{
+"solutionId": 47,
+"situationId": 16,
+"solutionDescription": "Vous leur dites que vous n'avez rien à manger non plus. Vous avez à peine assez de vivre pour vous donc vous n'allez pas commencer à partager avec des inconnus...",
+"solutionCondition": {
+"statutId": null,
+"objetId": null
+},
+"consequences": [
+{
+"groupNb": 1,
+"type": "vie",
+"nbVie": -4,
+"description": "Juste avant d'aller vous coucher vous parter dans un coin pour manger vosvivres discrètement. Manque de bol, {{membreGroupe2}} qui ne vous faisait pas confiance vous suit discrètement et vous prend sur le fait. Ils ont la gentillesse de vous laisser partir indemne mais récupèrent toute votre nourriture et vous chassent de leur abris. Vous allez devoir dormir dehors et le ventre vide..."
+}
+]
+},
+{
+"solutionId": 48,
+"situationId": 16,
+"solutionDescription": "Vous sortez votre fusil de chasse et réclamez qu'ils vous montrent où ils sont réfugiés. C'est l'apocalypse, c'est la loi du plus fort maintenant...",
+"solutionCondition": {
+"statutId": null,
+"objetId": 2
+},
+"consequences": [
+{
+"groupNb": 1,
+"type": "vie",
+"nbVie": -4,
+"description": "{{membreGroupe2}} s'exécute et vous emmène jusqu'à son refuge. Malheureusement, il semble qu'il avait prévu ce scénario et arrivé devant l'immeuble vous vous faites prendre en ambuscade. Des coupsde feu fusent dans tous les sens et vous contraignent à vous enfuir sans comprendre ce qu'il s'est vraiment passé"
+},
+{
+"groupsNb": [
+1
+],
+"type": "groupe",
+"groupAction": "scission",
+"description": "Dans la panique les membres de votre groupes partent dans tous les sens et vous perdez leur trace"
+}
+]
+},
+{
+"solutionId": 49,
+"situationId": 17,
+"solutionDescription": "Vous ouvrez le coffre-fort rose",
+"solutionCondition": {
+"statutId": null,
+"objetId": null
+},
+"consequences": [
+{
+"groupNb": 1,
+"type": "objet",
+"objetAction": "gain",
+"objetId": 2,
+"description": "Il s'agissait certainement d'un leurre. Le coffre-fort rose contenait en fait un fusil de chasse et des cartouches. Vous les récupérez et vous filez vite de là."
+}
+]
+},
+{
+"solutionId": 50,
+"situationId": 17,
+"solutionDescription": "Vous ouvrez le coffre fort de l'armée",
+"solutionCondition": {
+"statutId": null,
+"objetId": null
+},
+"consequences": [
+{
+"groupNb": 1,
+"type": "objet",
+"objetAction": "gain",
+"objetId": 5,
+"description": "Bingo le coffre est remplit à ras-bord... d'objets sexuels! Vous videz son contenu sur le lit pour essayer de récupérer au moins quelque chose mais vous ne trouvez que des menottes, baillons, godes et autres étrangetés. La seule chose attirant votre attention est une seringue contenant un liquide inconnu."
+}
+]
+},
+{
+"solutionId": 51,
+"situationId": 17,
+"solutionDescription": "Vous utilisez votre crochet pour ouvrir rapidement les 2 coffres.",
+"solutionCondition": {
+"statutId": null,
+"objetId": 4
+},
+"consequences": [
+{
+"groupNb": 1,
+"type": "objet",
+"objetAction": "gain",
+"objetId": 5,
+"description": "Vous commencez par ouvrir le coffre de l'armée. Bingo il est remplit à ras-bord... d'objets sexuels! Vous videz son contenu sur le lit pour essayer de récupérer au moins quelque chose mais vous ne trouvez que des menottes, baillons, godes et autres étrangetés. La seule chose attirant votre attention est une seringue contenant un liquide inconnu."
+},
+{
+"groupNb": 1,
+"type": "objet",
+"objetAction": "gain",
+"objetId": 2,
+"description": "Vous ouvrez ensuite le coffre rose. Il s'agissait certainement d'un leurre. Il contenait en fait un fusil de chasse et des cartouches. Vous les récupérez et vous filez vite de là."
+}
+]
+}
 ]

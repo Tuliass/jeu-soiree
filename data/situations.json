@@ -88,5 +88,17 @@
     "themeId": 1,
     "situationDescription": "Cela fais plusieurs jours que vous avez à peine mangé. En explorant une forêt vous tombez sur les traces de 3 sangliers. Elles ont l'air fraiches, vous devrez facilement pouvoir les pister. Que faites-vous?",
     "nbGroupes": 1
+  },
+  {
+    "situationId": 16,
+    "themeId": 1,
+    "situationDescription": "Vous explorez une ville quand vous croisez {{membreGroupe2}} à la tombée de la nuit. Il vous indique qu'ils ont établi refuge dans un immeuble proche, que c'est sécurisé mais qu'ils n'ont plus rien à manger. Que faites-vous?",
+    "nbGroupes": 2
+  },
+  {
+    "situationId": 17,
+    "themeId": 1,
+    "situationDescription": "Vous explorez une maison et vous y trouvez 2 coffres scellés. Le 1er vient de la chambre de la fille de la famille et est rose avec des strass et des dessins de licornes et le 2eme vient de la chambre des parents et présente des motifs camouflages et l'inscription US Navy. Vous vous apprétez à les forcer quand {{membreGroupe1}} vous signale qu'une horde de zombies arrive. Vous n'aurez pas le temps d'ouvrir les deux, que faites-vous?",
+    "nbGroupes": 1
   }
 ]
