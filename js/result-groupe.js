@@ -100,20 +100,26 @@ document.getElementById("continue-btn")
 // ===============================
 function fusionnerGroupes(indexes) {
 
-  let nouveauGroupe = [];
+  // 🔒 copier les groupes concernés AVANT modification
+  const groupesAFusionner = indexes.map(
+    index => state.groupesSituation[index - 1]
+  );
 
-  // Récupérer groupes concernés
-  indexes
-    .sort((a,b)=>b-a) // important pour suppression propre
-    .forEach(index => {
-      const groupe = state.groupesSituation[index - 1];
-      if (groupe) {
-        nouveauGroupe = nouveauGroupe.concat(groupe);
-        state.groupes.splice(index - 1, 1);
-      }
-    });
+  // 🔥 créer le nouveau groupe
+  const nouveauGroupe = groupesAFusionner.flat();
 
+  // 🔥 retirer TOUS les joueurs concernés des groupes existants
+  const idsFusionnes = nouveauGroupe.map(j => j.id);
+
+  state.groupes = state.groupes
+    .map(groupe =>
+      groupe.filter(joueur => !idsFusionnes.includes(joueur.id))
+    )
+    .filter(groupe => groupe.length > 0);
+
+  // ➕ ajouter le nouveau groupe
   state.groupes.push(nouveauGroupe);
+
   return [nouveauGroupe];
 }
 
@@ -123,11 +129,22 @@ function fusionnerGroupes(indexes) {
 function scinderGroupe(index) {
 
   const groupe = state.groupesSituation[index - 1];
-  if (!groupe||groupe.length<=1) return [];
 
-  // supprimer groupe original
-  state.groupes.splice(index - 1, 1);
+  if (!groupe || groupe.length <= 1) {
+    return [];
+  }
 
+  // IDs des joueurs concernés
+  const ids = groupe.map(j => j.id);
+
+  // 🔥 retirer complètement le groupe original
+  state.groupes = state.groupes
+    .map(g =>
+      g.filter(joueur => !ids.includes(joueur.id))
+    )
+    .filter(g => g.length > 0);
+
+  // 🔥 créer les groupes solos
   const groupesCrees = [];
 
   groupe.forEach(joueur => {
