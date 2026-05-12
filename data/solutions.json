@@ -90,7 +90,7 @@
         "groupNb": 1,
         "type": "vie",
         "description": "Pendant que vous rebroussez chemin, une seconde horde surgit de nul part et entoure votre voiture. Vous n'avez plus le choix, il faut abandonner le vehicule et forcer le passage. Cela risque d'être sanglant...",
-        "nbVie": -6
+        "nbVie": -4
       }
     ]
   },
@@ -1103,7 +1103,7 @@
     },
     "consequences": [
       {
-        "groupNb": 1,
+        "groupNb":1,
         "type": "vie",
         "nbVie": 2,
         "description": "Vous trouvez des petites baies rouges semblables à des cranberries. Cela ne remplit pas vraiment l'estomac mais c'est mieux que rien."
